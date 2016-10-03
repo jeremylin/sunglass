@@ -1,0 +1,36 @@
+@mixin radius($size:5px, $side1:all, $side2:all){
+	@if $side1 != all {
+		-webkit-border-#{$side1}-#{$side2}-radius: $size;
+		-moz-border-radius-#{$side1}#{$side2}: $size;
+		border-#{$side1}-#{$side2}-radius: $size;
+	} @else {
+		-webkit-border-radius: $size;
+		-moz-border-radius: $size;
+		border-radius: $size;
+	}
+}
+@mixin gradient($top, $bottom){
+	background: $top;
+	background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
+	background: -webkit-linear-gradient(top, $top 0%,$bottom 100%);
+	background: -o-linear-gradient(top, $top 0%,$bottom 100%);
+	background: -ms-linear-gradient(top, $top 0%,$bottom 100%);
+	background: linear-gradient(top, $top 0%,$bottom 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($top)}', endColorstr='#{ie-hex-str($bottom)}', GradientType=0 );
+}
+@mixin shadow($x:0, $y:0, $blur:20px, $spread:-5px, $color:#000, $isInset:false) {
+	@if $isInset == true {
+		-moz-box-shadow:    $x $y $blur $spread $color inset;
+		-webkit-box-shadow: $x $y $blur $spread $color inset;
+		box-shadow:         $x $y $blur $spread $color inset;
+	} @else {
+		-moz-box-shadow:    $x $y $blur $spread $color;
+		-webkit-box-shadow: $x $y $blur $spread $color;
+		box-shadow:         $x $y $blur $spread $color;
+	}
+}
+@mixin opacity($value){
+	opacity: $value / 100;
+	filter: alpha(opacity=$value);
+}

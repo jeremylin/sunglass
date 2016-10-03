@@ -1,0 +1,671 @@
+@import "normalize";
+@import "mixin";
+
+/*global*/
+html ,body {
+	width: 100%;
+	font-size: 75%; /* 16px*75%=12px */
+	font-family: Helvetica, Arial, "Microsoft Jhenghei", "微軟正黑體", sans-serif;
+	color: #161616;
+	background-color: #EEEEEF;
+}
+
+.section {
+	width: 100%;
+}
+
+.content {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.icon {
+	display: inline-block;
+	background-image: url(../images/icon.svg);
+	background-repeat: no-repeat;
+}
+
+.redStar, .sellTag, .specialPrice, .shipFee, .must, .takeThenPay {
+	color: #D30909;
+}
+
+.btn {
+	border: none;
+	padding: 24px 0;
+	text-align: center;
+	color: #FFFFFF;
+	border-radius: 8px;
+	background-color: #f7347c;
+	font-size: 2.0rem;
+
+	&:hover {
+		background-color: #ff5f9a;
+	}
+}
+
+select, input {
+	border: 1px solid #D1D1D1;
+	border-radius: 6px;
+	background-color: transparent;
+	padding: 0 10px;
+
+	&:focus {
+		border: 1px solid #000000;
+		outline: none;
+	}
+}
+
+button:focus {
+	outline: none;
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+/*圖片區*/
+.imgWrap {
+	background-color: #f8e0eb;
+
+	.mainProductImg {
+		width: 100%;
+		display: block;
+		margin-bottom: -2px;
+	}
+}
+
+/*時間倒數*/
+.timeWrap {
+	background-color: #EEEEEF;
+	z-index: 2;
+
+	.countDown {
+		text-align: center;
+		padding: 30px 0;
+
+		.timeWords {
+			display: block;
+
+			.countDownTitle {
+				font-size: 1.8rem;
+				font-weight: 800;
+				margin: 10px 0 12px;
+			}
+		}
+	}
+
+	&.scroll-fix {
+		box-shadow: 0 1px 20px #bbb;
+
+		.countDown {
+			padding: 10px 0;
+			-webkit-transition: all 0.6s ease-in-out;
+			-moz-transition: all 0.6s ease-in-out;
+			-o-transition: all 0.6s ease-in-out;
+			transition: all 0.6s ease-in-out;
+
+			.timeWords {
+				display: none;
+			}
+		}
+	}
+}
+
+/*購物方案選項*/
+.cartWrap {
+	background-color: #D1D1D1;
+	font-size: 1.6rem;
+
+	.addCart {
+		width: 640px;
+		padding: 30px 60px 50px;
+		background-color: #FFFFFF;
+
+		.prdouctList {
+			position: relative;
+
+			.sellTag {
+				position: absolute;
+				right: 0;
+			}
+
+			.cartImg {
+				width: 100%;
+				margin: 0 auto;
+			}
+
+			.productInfoWrap {
+				.production {
+					font-weight: 800;
+					line-height: 2.2rem;
+					width: calc(100% - 160px);
+					padding-bottom: 4px;
+				}
+
+				.description {
+					font-size: 1.4rem;
+					line-height: 2.0rem;
+					color: #5B5B5B;
+				}
+
+				.price {
+					margin: 16px 0;
+
+					.originPrice {
+						padding-right: 24px;
+						text-decoration: line-through;
+					}
+
+					.specialPrice {
+						font-weight: 600;
+					}
+				}
+			}
+
+			.btn {
+				width: 100%;
+				margin: 15px 0;
+			}
+		}
+	}
+}
+
+/*開始結帳*/
+.startPayWrap {
+	background-color: #EEEEEF;
+	font-size: 1.4rem;
+	padding: 60px 0 10px;
+
+	.shoppingList, .paymentWrap, .shippingInfoWrap {
+	    width: 760px;
+	    margin-bottom: 60px;
+	}
+
+	.ListTitle {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 20px;
+
+		.titleItem {
+			float: left;
+
+			.shoppingBagIcon, .paymentIcon, .shippingIcon {
+				width: 28px;
+				height: 28px;
+				background-size: 490%;
+				vertical-align: -6px;
+				margin-right: 10px;
+			}
+
+			.shoppingBagIcon {
+				background-position: -11px -35px;
+			}
+
+			.paymentIcon {
+				background-position: -38px -35px;
+			}
+
+			.shippingIcon {
+				background-position: -65px -34px;
+			}
+		}
+
+		.switch {
+			float: right;
+			cursor: pointer;
+		}
+
+		.openIcon, .closeIcon {
+			width: 28px;
+			height: 28px;
+			background-size: 490%;
+		}
+
+		.openIcon {
+			background-position: -38px -9px;
+		}
+
+		.closeIcon {
+			background-position: -64px -9px;
+		}
+	}
+
+	.listDetail {
+		background-color: #FFFFFF;
+		padding: 40px;
+		width: calc(100% - 80px);
+
+		.detailTable {
+			width: 100%;
+
+			.everyItem {
+				padding: 14px 0 10px;
+				border-bottom: 1px solid #D1D1D1;
+
+				.delIcon {
+					width: 24px;
+					height: 24px;
+					background-position: -13px -13px;
+					background-size: 600%;
+					margin-right: 6px;
+					cursor: pointer;
+				}
+
+				.itemName {
+					width: calc(100% - 210px);
+				}
+
+				.amount {
+					width: 60px;
+					text-align: right;
+				}
+
+				.sectionPrice {
+					width: 110px;
+					text-align: right;
+					margin-left: 10px;
+				}
+
+				.delItem, .itemName, .amount {
+					float: left;
+					line-height: 2.2rem;
+				}
+
+				.sectionPrice {
+					float: right;
+					line-height: 2.2rem;
+				}
+			}
+
+			.shippingFeeWrap, .allPriceWrap {
+				width: 100%;
+				float: right;
+				text-align: right;
+				padding: 14px 0 10px;
+
+				.shipFeeTitle, .shipFee, .totalFeeTitle, .totalFee {
+					display: inline-block;
+				}
+
+				.shipFeeTitle, .totalFeeTitle {
+					width: 60px;
+				}
+
+				.shipFee, .totalFee {
+					width: 110px;
+					margin-left: 5px;
+				}
+
+				.totalFee {
+					font-weight: 800;
+				}
+			}
+
+			.shippingFeeWrap {
+				border-bottom: 1px solid #9B9B9B;
+			}
+		}
+
+		&.listDetailDesktop {
+			display: block;
+		}
+
+		&.listDetailMobile {
+			display: none;
+
+			.everyItem .itemName {
+				width: 100%;
+				font-weight: 800;
+				margin-bottom: 12px;
+			}
+
+			.cartList {
+				width: 100%;
+
+				.delItem {
+					float: none;
+					position: relative;
+					top: 18px;
+				}
+
+				.countWrap {
+					float: right;
+					width: 80%;
+
+					.eachCount {
+						text-align: right;
+
+						.amountTitle, .amount, .sectionPrice {
+							display: inline-block;
+							margin-left: 2%;
+							line-height: 2.2rem;
+						}
+
+						.amountTitle {
+							width: 60px;
+						}
+
+						.amount, .sectionPrice {
+							float: none;
+							width: 110px;
+						}
+					}
+				}
+
+			}
+		}
+
+		.btn {
+			width: 100%;
+			margin: 24px 0 10px;
+		}
+
+		.delivery {
+			font-size: 1.6rem;
+			margin: 0 0 24px;
+			line-height: 2.2rem;
+
+			.takeThenPay {
+				padding: 0 5px;
+			}
+
+			.explain {
+				font-size: 1.2rem;
+				color: #a9a9a9;
+			}
+		}
+
+		.step {
+			color: #ffa7a7;
+			padding-left: 10px;
+			font-size: 1.6rem;
+		}
+	}
+
+	label {
+		font-size: 1.3rem;
+	}
+
+	.receivePackage, .name, .receiveSessions {
+		float: left;
+		width: 48%;
+	}
+
+	.address {
+		float: left;
+		width: 100%;
+	}
+
+	.payMethod, .phone, .note {
+		float: right;
+		width: 48%
+	}
+
+	.receiveOpt, .payment, .nameInput, .phoneInput, .addressInput, .sessions, .noteInput {
+		width: 100%;
+		height: 45px;
+		display: block;
+		margin: 6px 0 20px;
+	}
+
+	.nameInput, .phoneInput, .noteInput, .address {
+		width: calc(100% - 20px);
+	}
+}
+
+/*客服*/
+.CSR {
+	font-size: 1.6rem;
+	padding-left: 0;
+	margin: 0;
+
+	li {
+		width: 100%;
+		padding: 8px 16px;
+		text-align: right;
+
+		&.csPhone {
+			background-color: #EA7807;
+		}
+
+		&.csLine {
+			background-color: #02C303;
+		}
+
+		&.csFb {
+			background-color: #0084FF;
+		}
+
+		a {
+			color: #FFFFFF;
+			display: block;
+			width: 100%;
+
+			.icon {
+				width: 36px;
+				height: 36px;
+				float: left;
+				background-size: 540%;
+			}
+
+			.cs {
+				vertical-align: -6px;
+			}
+
+			.callIcon {
+				background-position: -15px -97px;
+			}
+
+			.lineIcon {
+				background-position: -55px -94px
+			}
+
+			.fbIcon {
+				background-position: -93px -94px;
+			}
+		}
+	}
+
+	&.CSR-desktop {
+		position: fixed;
+		right: 0;
+		top: 50%;
+
+		li {
+			width: 130px;
+		}
+	}
+}
+
+.moNaviWrap {
+	width: 100%;
+	height: 60px;
+	background-color: #FFFFFF;
+	font-size: 1.8rem;
+	position: relative;
+	box-shadow: 0 -1px 20px rgba(171, 171, 171, 0.68);
+	display: none;
+
+	.buyNow {
+		width: calc(80% - 1px);
+		line-height: 60px;
+		float: left;
+		text-align: center;
+		border-right: 1px solid #d6d6d6;
+		color: #D30909;
+	}
+
+	.csWrap {
+		width: 20%;
+		line-height: 60px;
+		float: right;
+		text-align: center;
+
+		.moreIcon {
+			width: 40px;
+			height: 30px;
+			background-size: 600%;
+			background-position: -166px -25px;
+			position: relative;
+			top: 6px;
+		}
+	}
+
+	.CSR-mobile {
+		display: none;
+		width: calc(100% - 32px);
+		position: absolute;
+		bottom: 60px;
+	}
+
+	.expand {
+		display: block;
+	}
+
+	&.off-canvas {
+		bottom: -60px;
+	}
+
+	&.fixed {
+		bottom: 0;
+		z-index: 10;
+		-webkit-transition-delay: 0.2s;
+		-moz-transition-delay: 0.2s;
+		transition-delay: 0.2s;
+	}
+}
+
+/*footer*/
+#footer {
+	width: auto;
+	background-color: #eeeeef;
+	text-align: center;
+	height: 42px;
+	line-height: 42px;
+	font-size: 1.2rem;
+
+	.copyright {
+		color: #7f7f7f;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+    // 如果使用者之視窗寬度介於 1025px ~ 1280px，將會再載入這裡的 CSS。
+	.content {
+		width: 960px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+    // 如果使用者之視窗寬度介於 768px ~ 1024px，將會再載入這裡的 CSS。
+	.content {
+		width: 100%;
+	}
+
+	.CSR.CSR-desktop {
+		display: none;
+	}
+
+	.moNaviWrap {
+		display: block;
+		position: fixed;
+		bottom: 0;
+	}
+
+	#footer {
+		margin-bottom: 60px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+    // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。
+	.cartWrap {
+		.addCart {
+			width: calc(100% - 120px);
+			padding: 70px 60px 30px;
+
+			.prdouctList {
+				margin: 0 0 40px;
+
+				.sellTag {
+					left: 0;
+					top: 0;
+				}
+
+				.cartImg {
+					margin-top: 34px;
+				}
+
+				.productInfoWrap .production {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.startPayWrap {
+		.shoppingList, .paymentWrap, .shippingInfoWrap {
+			width: 94%;
+
+			.listDetail.listDetailDesktop {
+				display: none;
+			}
+
+			.listDetail.listDetailMobile {
+				display: block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+    // 如果使用者之視窗寬度介於 481px ~ 640px，將會再載入這裡的 CSS。
+	.btn {
+		padding: 18px 0;
+		font-size: 1.8rem;
+	}
+
+	.cartWrap {
+		.addCart {
+			width: calc(100% - 40px);
+			padding: 40px 20px 10px;
+
+			.prdouctList {
+				margin: 0 0 30px;
+			}
+		}
+	}
+
+	.startPayWrap {
+		.listDetail {
+			padding: 25px;
+		width: calc(100% - 50px);
+		}
+
+		.receivePackage, .name, .receiveSessions, .payMethod, .phone, .note {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+    // 如果使用者之視窗寬度介於 321px ~ 480px，將會再載入這裡的 CSS。
+    .startPayWrap .shippingInfoWrap {
+	margin-bottom: 20px;
+    }
+
+    .timeWrap .countDown .timeWords {
+	.countDownTitle {
+		font-size: 1.4rem;
+		margin: 10px 0;
+	}
+
+	.timeLeft {
+		font-size: 2.2rem;
+	}
+    }
+}
