@@ -346,9 +346,12 @@ button:focus {
 				width: 100%;
 
 				.delItem {
+					width: 44px;
+					height: 44px;
 					float: none;
 					position: relative;
-					top: 18px;
+					top: 4px;
+					background-position: -21px -24px;
 				}
 
 				.countWrap {
@@ -360,7 +363,7 @@ button:focus {
 
 						.amountTitle, .amount, .sectionPrice {
 							display: inline-block;
-							margin-left: 2%;
+							margin-left: 5px;
 							line-height: 2.2rem;
 						}
 
