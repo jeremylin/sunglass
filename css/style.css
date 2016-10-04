@@ -695,9 +695,12 @@ button:focus {
   width: 100%;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .delItem {
+  width: 44px;
+  height: 44px;
   float: none;
   position: relative;
-  top: 18px;
+  top: 4px;
+  background-position: -21px -24px;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap {
   float: right;
@@ -708,7 +711,7 @@ button:focus {
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amountTitle, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amount, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .sectionPrice {
   display: inline-block;
-  margin-left: 2%;
+  margin-left: 5px;
   line-height: 2.2rem;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amountTitle {
