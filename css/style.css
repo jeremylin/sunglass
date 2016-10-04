@@ -439,6 +439,13 @@ html, body {
   background-color: #f7347c;
   font-size: 2.0rem;
 }
+.btn.disable {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+.btn.disable:hover {
+  background-color: #dcdcdc;
+}
 .btn:hover {
   background-color: #ff5f9a;
 }
@@ -591,6 +598,7 @@ button:focus {
 .startPayWrap .ListTitle .switch {
   float: right;
   cursor: pointer;
+  display: none;
 }
 .startPayWrap .ListTitle .openIcon, .startPayWrap .ListTitle .closeIcon {
   width: 28px;
@@ -607,6 +615,13 @@ button:focus {
   background-color: #FFFFFF;
   padding: 40px;
   width: calc(100% - 80px);
+}
+.startPayWrap .listDetail .noProduct {
+  text-align: center;
+  color: #999999;
+}
+.startPayWrap .listDetail .noProduct.hasProduct {
+  display: none;
 }
 .startPayWrap .listDetail .detailTable {
   width: 100%;
@@ -705,6 +720,7 @@ button:focus {
 }
 .startPayWrap .listDetail .btn {
   width: 100%;
+  display: block;
   margin: 24px 0 10px;
 }
 .startPayWrap .listDetail .delivery {
@@ -760,6 +776,9 @@ button:focus {
   padding: 8px 16px;
   text-align: right;
 }
+.CSR li.buyNow {
+  background-color: #980000;
+}
 .CSR li.csPhone {
   background-color: #EA7807;
 }
@@ -782,6 +801,9 @@ button:focus {
 }
 .CSR li a .cs {
   vertical-align: -6px;
+}
+.CSR li a .buyIcon {
+  background-position: -132px -94px;
 }
 .CSR li a .callIcon {
   background-position: -15px -97px;
@@ -847,9 +869,9 @@ button:focus {
 .moNaviWrap.fixed {
   bottom: 0;
   z-index: 10;
-  -webkit-transition-delay: 0.2s;
-  -moz-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 /*footer*/
