@@ -38,6 +38,15 @@ html ,body {
 	background-color: #f7347c;
 	font-size: 2.0rem;
 
+	&.disable {
+		background-color: #dcdcdc;
+		cursor: not-allowed;
+
+		&:hover {
+			background-color: #dcdcdc;
+		}
+	}
+
 	&:hover {
 		background-color: #ff5f9a;
 	}
@@ -217,6 +226,7 @@ button:focus {
 		.switch {
 			float: right;
 			cursor: pointer;
+			display: none;
 		}
 
 		.openIcon, .closeIcon {
@@ -238,6 +248,15 @@ button:focus {
 		background-color: #FFFFFF;
 		padding: 40px;
 		width: calc(100% - 80px);
+
+		.noProduct {
+			text-align: center;
+			color: #999999;
+
+			&.hasProduct {
+				display: none;
+			}
+		}
 
 		.detailTable {
 			width: 100%;
@@ -361,6 +380,7 @@ button:focus {
 
 		.btn {
 			width: 100%;
+			display: block;
 			margin: 24px 0 10px;
 		}
 
@@ -428,6 +448,10 @@ button:focus {
 		padding: 8px 16px;
 		text-align: right;
 
+		&.buyNow {
+			background-color: #980000;
+		}
+
 		&.csPhone {
 			background-color: #EA7807;
 		}
@@ -454,6 +478,10 @@ button:focus {
 
 			.cs {
 				vertical-align: -6px;
+			}
+
+			.buyIcon {
+				background-position: -132px -94px;
 			}
 
 			.callIcon {
@@ -533,9 +561,9 @@ button:focus {
 	&.fixed {
 		bottom: 0;
 		z-index: 10;
-		-webkit-transition-delay: 0.2s;
-		-moz-transition-delay: 0.2s;
-		transition-delay: 0.2s;
+		-webkit-transition-delay: 0.1s;
+		-moz-transition-delay: 0.1s;
+		transition-delay: 0.1s;
 	}
 }
 

@@ -17,7 +17,20 @@
         <script type="text/javascript">
             $(function() {
                 $('.timeWrap').scrollFix();
-                
+
+				$('a[href^="#"]').bind('click.smoothscroll',function (e) {
+			        e.preventDefault();
+			      
+			        var target = this.hash,
+			        $target = $(target);
+			      
+			        $('html, body').stop().animate({
+			            'scrollTop': $target.offset().top-40
+			        }, 750, 'swing', function () {
+			            window.location.hash = target;
+			        });
+			    });
+	                
                 $( '.csWrap' ).click(function(){
                     $('.CSR-mobile').toggleClass('expand')
                 })
@@ -56,7 +69,7 @@
 			</div>
 		</section>
 		<!-- 購物方案 -->
-		<section class="cartWrap section">
+		<section id="buy_items" class="cartWrap section">
 			<div class="addCart content">
 				<div class="prdouctList">
 					<img src="images/cart01.jpg" class="cartImg">
@@ -99,6 +112,7 @@
 					<span class="icon switch openIcon"></span>
 				</div>
 				<div class="listDetail listDetailDesktop">
+					<p class="noProduct">您目前尚未選購任何商品！</p>
 					<div class="detailTable clearfix">
 						<div class="everyItem clearfix">
 							<div class="delItem icon delIcon"></div>
@@ -121,7 +135,7 @@
 							<div class="totalFee">2,379元</div>
 						</div>
 					</div>
-					<button type="button" class="btn">下一步<span class="step">(1/3)</span></button>
+					<a href="#addressing" class="btn">下一步</a>					
 				</div>
 				<div class="listDetail listDetailMobile">
 					<div class="detailTable clearfix">
@@ -154,7 +168,7 @@
 							<div class="totalFee">2,379元</div>
 						</div>
 					</div>
-					<button type="button" class="btn">下一步<span class="step">(1/3)</span></button>
+					<a href="#addressing" class="btn">下一步</a>
 				</div>
 			</div>
 			<!-- 付款、貨運
@@ -183,7 +197,7 @@
 			</div>
 			 -->
 			<!-- 運送資訊 -->
-			<div class="shippingInfoWrap content">
+			<div id="addressing" class="shippingInfoWrap content">
 				<div class="ListTitle clearfix">
 					<div class="titleItem"><span class="icon shippingIcon"></span>寄送資訊</div>
 					<span class="icon switch closeIcon"></span>
@@ -227,12 +241,13 @@
 		</footer>
 		<!-- 客服 -->
 		<ul class="CSR CSR-desktop">
+			<li class="buyNow"><a href="#buy_items" class="clearfix"><span class="icon buyIcon"></span><span class="cs">立即訂購</span></a></li>
 			<li class="csPhone"><a href="" class="clearfix"><span class="icon callIcon"></span><span class="cs">手機直撥</span></a></li>
 			<li class="csLine"><a href="" class="clearfix"><span class="icon lineIcon"></span><span class="cs">Line@</span></a></li>
 			<li class="csFb"><a href="" class="clearfix"><span class="icon fbIcon"></span><span class="cs">Facebook</span></a></li>
 		</ul>
 		<div class="moNaviWrap">
-			<a href="" class="buyNow">立即訂購</a>
+			<a href="#buy_items" class="buyNow">立即訂購</a>
 			<div class="csWrap"><span class="icon moreIcon"></span></div>
 			<ul class="CSR CSR-mobile">
 				<li class="csPhone"><a href="" class="clearfix"><span class="icon callIcon"></span><span class="cs">手機直撥</span></a></li>
