@@ -658,6 +658,12 @@ button:focus {
   float: right;
   line-height: 2.2rem;
 }
+.startPayWrap .listDetail .detailTable .everyItem .commodityDetail {
+  color: #929292;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  padding: 34px 0 0 30px;
+}
 .startPayWrap .listDetail .detailTable .shippingFeeWrap, .startPayWrap .listDetail .detailTable .allPriceWrap {
   width: 100%;
   float: right;
