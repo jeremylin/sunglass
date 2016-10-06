@@ -343,14 +343,23 @@ button:focus {
 		&.listDetailMobile {
 			display: none;
 
-			.everyItem .itemName {
-				width: 100%;
-				font-weight: 800;
-				margin-bottom: 12px;
+			.everyItem {
+				.itemName {
+					width: 100%;
+					font-weight: 800;
+					margin-bottom: 5px;
+					line-height: 1.8rem;
+					float: none;
+				}
+
+				.commodityDetail {
+					padding: 0;
+				}
 			}
 
 			.cartList {
 				width: 100%;
+				margin-top: 16px;
 
 				.delItem {
 					width: 44px;
@@ -384,7 +393,6 @@ button:focus {
 						}
 					}
 				}
-
 			}
 		}
 
