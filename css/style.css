@@ -695,10 +695,16 @@ button:focus {
 .startPayWrap .listDetail.listDetailMobile .everyItem .itemName {
   width: 100%;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
+  line-height: 1.8rem;
+  float: none;
+}
+.startPayWrap .listDetail.listDetailMobile .everyItem .commodityDetail {
+  padding: 0;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList {
   width: 100%;
+  margin-top: 16px;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .delItem {
   width: 44px;
