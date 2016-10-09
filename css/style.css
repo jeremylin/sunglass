@@ -691,7 +691,7 @@ button:focus {
   width: 60px;
 }
 .startPayWrap .listDetail .detailTable .shippingFeeWrap .shipFee, .startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFee, .startPayWrap .listDetail .detailTable .allPriceWrap .shipFee, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFee {
-  width: 110px;
+  width: 106px;
   margin-left: 5px;
 }
 .startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFee, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFee {
@@ -725,7 +725,7 @@ button:focus {
   height: 44px;
   float: none;
   position: relative;
-  top: 4px;
+  top: 2px;
   background-position: -19px -19px;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap {
