@@ -432,7 +432,7 @@ html, body {
 
 .btn {
   border: none;
-  padding: 24px 0;
+  padding: 20px 0;
   text-align: center;
   color: #FFFFFF;
   border-radius: 8px;
@@ -520,25 +520,35 @@ button:focus {
   font-size: 1.6rem;
 }
 .cartWrap .addCart {
-  width: 640px;
-  padding: 30px 60px 50px;
+  width: 1110px;
+  padding: 60px 30px 50px;
   background-color: #FFFFFF;
 }
 .cartWrap .addCart .prdouctList {
   position: relative;
+  width: calc(calc(100% / 3) - calc(186px / 3));
+  margin: 0 15px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 2px 4px 15px #ececec;
 }
 .cartWrap .addCart .prdouctList .sellTag {
-  position: absolute;
-  right: 0;
+  font-size: 1.8rem;
 }
 .cartWrap .addCart .prdouctList .cartImg {
   width: 100%;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+.cartWrap .addCart .prdouctList .productInfoWrap {
+  position: relative;
+  height: 160px;
 }
 .cartWrap .addCart .prdouctList .productInfoWrap .production {
   font-weight: 800;
   line-height: 2.2rem;
-  width: calc(100% - 160px);
+  width: 100%;
   padding-bottom: 4px;
 }
 .cartWrap .addCart .prdouctList .productInfoWrap .description {
@@ -547,18 +557,22 @@ button:focus {
   color: #5B5B5B;
 }
 .cartWrap .addCart .prdouctList .productInfoWrap .price {
-  margin: 16px 0;
-}
-.cartWrap .addCart .prdouctList .productInfoWrap .price .originPrice {
-  padding-right: 24px;
-  text-decoration: line-through;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 2.0rem;
 }
 .cartWrap .addCart .prdouctList .productInfoWrap .price .specialPrice {
   font-weight: 600;
 }
+.cartWrap .addCart .prdouctList .productInfoWrap .price .originPrice {
+  text-decoration: line-through;
+  font-size: 1.4rem;
+  color: #777777;
+}
 .cartWrap .addCart .prdouctList .btn {
   width: 100%;
-  margin: 15px 0;
+  margin: 25px 0 0;
 }
 
 /*開始結帳*/
@@ -633,10 +647,12 @@ button:focus {
 .startPayWrap .listDetail .detailTable .everyItem .delIcon {
   width: 24px;
   height: 24px;
-  background-position: -13px -13px;
-  background-size: 600%;
+  background-position: -10px -11px;
+  background-size: 540%;
   margin-right: 6px;
   cursor: pointer;
+  background-color: #e4e4e4;
+  border-radius: 6px;
 }
 .startPayWrap .listDetail .detailTable .everyItem .itemName {
   width: calc(100% - 210px);
@@ -649,13 +665,11 @@ button:focus {
   width: 110px;
   text-align: right;
   margin-left: 10px;
+  float: right;
+  line-height: 2.2rem;
 }
 .startPayWrap .listDetail .detailTable .everyItem .delItem, .startPayWrap .listDetail .detailTable .everyItem .itemName, .startPayWrap .listDetail .detailTable .everyItem .amount {
   float: left;
-  line-height: 2.2rem;
-}
-.startPayWrap .listDetail .detailTable .everyItem .sectionPrice {
-  float: right;
   line-height: 2.2rem;
 }
 .startPayWrap .listDetail .detailTable .everyItem .commodityDetail {
@@ -712,7 +726,7 @@ button:focus {
   float: none;
   position: relative;
   top: 4px;
-  background-position: -21px -24px;
+  background-position: -19px -19px;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap {
   float: right;
@@ -724,7 +738,7 @@ button:focus {
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amountTitle, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amount, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .sectionPrice {
   display: inline-block;
   margin-left: 5px;
-  line-height: 2.2rem;
+  line-height: 2.0rem;
 }
 .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amountTitle {
   width: 60px;
@@ -740,15 +754,17 @@ button:focus {
 }
 .startPayWrap .listDetail .delivery {
   font-size: 1.6rem;
-  margin: 0 0 24px;
+  margin: 0 0 5px 0;
   line-height: 2.2rem;
 }
 .startPayWrap .listDetail .delivery .takeThenPay {
   padding: 0 5px;
 }
-.startPayWrap .listDetail .delivery .explain {
+.startPayWrap .listDetail .explain {
   font-size: 1.2rem;
+  line-height: 1.5rem;
   color: #a9a9a9;
+  margin: 0 0 24px;
 }
 .startPayWrap .listDetail .step {
   color: #ffa7a7;
@@ -781,18 +797,22 @@ button:focus {
 }
 
 /*客服*/
+.CSRWrap {
+  width: 768px;
+  margin: 0 auto;
+}
+
 .CSR {
   font-size: 1.6rem;
   padding-left: 0;
   margin: 0;
+  text-align: center;
 }
 .CSR li {
-  width: 100%;
-  padding: 8px 16px;
+  padding: 6px 20px;
   text-align: right;
-}
-.CSR li.buyNow {
-  background-color: #980000;
+  display: inline-block;
+  width: calc(590px / 4);
 }
 .CSR li.csPhone {
   background-color: #EA7807;
@@ -802,6 +822,9 @@ button:focus {
 }
 .CSR li.csFb {
   background-color: #0084FF;
+}
+.CSR li:hover {
+  opacity: 0.9;
 }
 .CSR li a {
   color: #FFFFFF;
@@ -815,10 +838,7 @@ button:focus {
   background-size: 540%;
 }
 .CSR li a .cs {
-  vertical-align: -6px;
-}
-.CSR li a .buyIcon {
-  background-position: -132px -94px;
+  line-height: 36px;
 }
 .CSR li a .callIcon {
   background-position: -15px -97px;
@@ -829,64 +849,17 @@ button:focus {
 .CSR li a .fbIcon {
   background-position: -93px -94px;
 }
-.CSR.CSR-desktop {
-  position: fixed;
-  right: 0;
-  top: 50%;
-}
-.CSR.CSR-desktop li {
-  width: 130px;
-}
 
-.moNaviWrap {
-  width: 100%;
-  height: 60px;
-  background-color: #FFFFFF;
-  font-size: 1.8rem;
-  position: relative;
-  box-shadow: 0 -1px 20px rgba(171, 171, 171, 0.68);
+.buyNow {
+  position: fixed;
+  right: 10px;
+  bottom: 15%;
+  background-color: #e64646;
+  color: #FFFFFF;
+  padding: 10px;
+  font-size: 1.6rem;
+  box-shadow: -2px -2px 0px #000;
   display: none;
-}
-.moNaviWrap .buyNow {
-  width: calc(80% - 1px);
-  line-height: 60px;
-  float: left;
-  text-align: center;
-  border-right: 1px solid #d6d6d6;
-  color: #D30909;
-}
-.moNaviWrap .csWrap {
-  width: 20%;
-  line-height: 60px;
-  float: right;
-  text-align: center;
-}
-.moNaviWrap .csWrap .moreIcon {
-  width: 40px;
-  height: 30px;
-  background-size: 600%;
-  background-position: -166px -25px;
-  position: relative;
-  top: 6px;
-}
-.moNaviWrap .CSR-mobile {
-  display: none;
-  width: calc(100% - 32px);
-  position: absolute;
-  bottom: 60px;
-}
-.moNaviWrap .expand {
-  display: block;
-}
-.moNaviWrap.off-canvas {
-  bottom: -60px;
-}
-.moNaviWrap.fixed {
-  bottom: 0;
-  z-index: 10;
-  -webkit-transition-delay: 0.1s;
-  -moz-transition-delay: 0.1s;
-  transition-delay: 0.1s;
 }
 
 /*footer*/
@@ -903,27 +876,53 @@ button:focus {
 }
 
 @media screen and (max-width: 1280px) {
+  html, body {
+    font-size: 65%;
+  }
+
+  .cartWrap .addCart {
+    width: 900px;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap .production {
+    line-height: 1.8rem;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap .description {
+    line-height: 1.6rem;
+  }
+  .cartWrap .addCart .prdouctList .btn {
+    margin: 16px 0 0;
+    font-size: 1.6rem;
+    padding: 16px 0;
+  }
+
   .content {
     width: 960px;
   }
 }
 @media screen and (max-width: 1024px) {
+  .cartWrap .addCart {
+    width: 620px;
+    padding: 60px 70px 50px;
+  }
+  .cartWrap .addCart .prdouctList {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .cartWrap .addCart .prdouctList .cartImg {
+    width: 80%;
+    display: block;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap {
+    height: 130px;
+  }
+
   .content {
     width: 100%;
   }
 
-  .CSR.CSR-desktop {
-    display: none;
-  }
-
-  .moNaviWrap {
+  .buyNow {
     display: block;
-    position: fixed;
-    bottom: 0;
-  }
-
-  #footer {
-    margin-bottom: 60px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -934,15 +933,22 @@ button:focus {
   .cartWrap .addCart .prdouctList {
     margin: 0 0 40px;
   }
-  .cartWrap .addCart .prdouctList .sellTag {
-    left: 0;
-    top: 0;
-  }
   .cartWrap .addCart .prdouctList .cartImg {
-    margin-top: 34px;
+    width: 90%;
   }
   .cartWrap .addCart .prdouctList .productInfoWrap .production {
     width: 100%;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap .price {
+    line-height: 1.8rem;
+  }
+
+  .CSRWrap {
+    width: 100%;
+  }
+
+  .CSR li {
+    width: 110px;
   }
 
   .startPayWrap .shoppingList, .startPayWrap .paymentWrap, .startPayWrap .shippingInfoWrap {
@@ -957,8 +963,8 @@ button:focus {
 }
 @media screen and (max-width: 640px) {
   .btn {
-    padding: 18px 0;
-    font-size: 1.8rem;
+    padding: 16px 0;
+    font-size: 1.6rem;
   }
 
   .cartWrap .addCart {
@@ -967,6 +973,10 @@ button:focus {
   }
   .cartWrap .addCart .prdouctList {
     margin: 0 0 30px;
+  }
+
+  .CSR li {
+    width: 110px;
   }
 
   .startPayWrap .listDetail {
@@ -978,16 +988,21 @@ button:focus {
   }
 }
 @media screen and (max-width: 480px) {
-  .startPayWrap .shippingInfoWrap {
-    margin-bottom: 20px;
+  html, body {
+    font-size: 60%;
   }
 
-  .timeWrap .countDown .timeWords .countDownTitle {
-    font-size: 1.4rem;
-    margin: 10px 0;
+  .cartWrap .addCart {
+    width: calc(100% - 20px);
+    padding: 40px 10px 10px;
   }
-  .timeWrap .countDown .timeWords .timeLeft {
-    font-size: 2.2rem;
+  .cartWrap .addCart .prdouctList {
+    width: calc(100% - 40px);
+    padding: 25px 20px;
+  }
+
+  .startPayWrap .shippingInfoWrap {
+    margin-bottom: 20px;
   }
 }
 
