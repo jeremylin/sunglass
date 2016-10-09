@@ -809,7 +809,7 @@ button:focus {
   text-align: center;
 }
 .CSR li {
-  padding: 6px 20px;
+  padding: 6px 14px;
   text-align: right;
   display: inline-block;
   width: calc(590px / 4);
@@ -948,7 +948,7 @@ button:focus {
   }
 
   .CSR li {
-    width: 110px;
+    width: 120px;
   }
 
   .startPayWrap .shoppingList, .startPayWrap .paymentWrap, .startPayWrap .shippingInfoWrap {
@@ -973,10 +973,6 @@ button:focus {
   }
   .cartWrap .addCart .prdouctList {
     margin: 0 0 30px;
-  }
-
-  .CSR li {
-    width: 110px;
   }
 
   .startPayWrap .listDetail {
