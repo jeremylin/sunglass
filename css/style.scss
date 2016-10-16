@@ -35,7 +35,7 @@ html ,body {
 	text-align: center;
 	color: #FFFFFF;
 	border-radius: 8px;
-	background-color: #f7347c;
+	background-color: #dcba7d;
 	font-size: 2.0rem;
 
 	&.disable {
@@ -48,7 +48,8 @@ html ,body {
 	}
 
 	&:hover {
-		background-color: #ff5f9a;
+		background-color: #f9d674;
+		color: #925b38;
 	}
 }
 
@@ -143,7 +144,7 @@ button:focus {
 
 		.prdouctList {
 			position: relative;
-			width: calc(calc(100% / 3) - calc(186px / 3));
+			width: calc(33.333% - 62px);
 			margin: 0 15px;
 			float: left;
 			border: 1px solid #e8e8e8;
