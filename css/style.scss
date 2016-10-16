@@ -68,6 +68,13 @@ button:focus {
 	outline: none;
 }
 
+.production {
+	font-weight: 800;
+	line-height: 2.2rem;
+	width: 100%;
+	padding-bottom: 4px;
+}
+
 .clearfix:after {
    content: ".";
    visibility: hidden;
@@ -156,13 +163,6 @@ button:focus {
 			.productInfoWrap {
 				position: relative;
 				height: 160px;
-
-				.production {
-					font-weight: 800;
-					line-height: 2.2rem;
-					width: 100%;
-					padding-bottom: 4px;
-				}
 
 				.description {
 					font-size: 1.4rem;
@@ -560,11 +560,95 @@ button:focus {
 	}
 }
 
+/*lightbox*/
+.lightbox {
+	width: 100%;
+	height: 100vh;
+	font-size: 1.4rem;
+	background-color: rgba(0,0,0,0.7);
+	position: relative;
+
+	.lightboxContent {
+		width: 450px;
+		height: 378px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background-color: #F9FAFB;
+		border-radius: 8px;
+
+		.lightboxTitleWrap {
+			height: 69px;
+			line-height: 69px;
+			border-bottom: 1px solid #EDF0F1;
+
+			h2 {
+				float: left;
+				margin: 0 25px;
+				font-size: 2rem;
+			}
+
+			.icon {
+				background-size: 560%;
+			}
+
+			.closeBtn {
+				float: right;
+				margin: 14px 15px;
+				width: 40px;
+				height: 40px;
+				background-position: -154px -59px;
+				cursor: pointer;
+			}
+		}
+
+		.optionsWrap {
+			padding: 25px;
+			height: 160px;
+			overflow: auto;
+
+			.production {
+				font-size: 1.2rem;
+				color: #585858;
+				font-weight: 400;
+			}
+
+			select {
+				width: 100%;
+				height: 45px;
+
+				option {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.summitWrap {
+			background-color: #ECF0F1;
+			width: calc(100% - 50px);
+			height: 68px;
+			padding: 15px 25px;
+			border-radius: 0 0 8px 8px;
+
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 1280px) {
     // 如果使用者之視窗寬度介於 1025px ~ 1280px，將會再載入這裡的 CSS。
     html, body {
 	font-size: 65%;
     }
+
+	.production {
+		line-height: 1.8rem;
+	}
 
     .cartWrap {
 	.addCart {
@@ -572,10 +656,6 @@ button:focus {
 
 		.prdouctList {
 			.productInfoWrap {
-				.production {
-					line-height: 1.8rem;
-				}
-
 				.description {
 					line-height: 1.6rem;
 				}
@@ -643,10 +723,6 @@ button:focus {
 				}
 
 				.productInfoWrap {
-					.production {
-						width: 100%;
-					}
-
 					.price {
 						line-height: 1.8rem;
 					}
@@ -709,6 +785,14 @@ button:focus {
 			width: 100%;
 		}
 	}
+
+	.lightbox {
+		.lightboxContent .summitWrap {
+			height: 56px;
+			position: absolute;
+			bottom: 0;
+		}
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -734,4 +818,24 @@ button:focus {
 		margin-bottom: 20px;
 	}
     }
+
+	.lightbox {
+		.lightboxContent {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+
+			.optionsWrap {
+				height: calc(100vh - 206px);
+
+				.production {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.summitWrap {
+			border-radius: 0;
+		}
+	}
 }
