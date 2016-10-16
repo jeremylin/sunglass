@@ -465,6 +465,13 @@ button:focus {
   outline: none;
 }
 
+.production {
+  font-weight: 800;
+  line-height: 2.2rem;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
 .clearfix:after {
   content: ".";
   visibility: hidden;
@@ -544,12 +551,6 @@ button:focus {
 .cartWrap .addCart .prdouctList .productInfoWrap {
   position: relative;
   height: 160px;
-}
-.cartWrap .addCart .prdouctList .productInfoWrap .production {
-  font-weight: 800;
-  line-height: 2.2rem;
-  width: 100%;
-  padding-bottom: 4px;
 }
 .cartWrap .addCart .prdouctList .productInfoWrap .description {
   font-size: 1.4rem;
@@ -875,16 +876,86 @@ button:focus {
   color: #7f7f7f;
 }
 
+/*lightbox*/
+.lightbox {
+  width: 100%;
+  height: 100vh;
+  font-size: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+.lightbox .lightboxContent {
+  width: 450px;
+  height: 378px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+}
+.lightbox .lightboxContent .lightboxTitleWrap {
+  height: 69px;
+  line-height: 69px;
+  border-bottom: 1px solid #EDF0F1;
+}
+.lightbox .lightboxContent .lightboxTitleWrap h2 {
+  float: left;
+  margin: 0 25px;
+  font-size: 2rem;
+}
+.lightbox .lightboxContent .lightboxTitleWrap .icon {
+  background-size: 560%;
+}
+.lightbox .lightboxContent .lightboxTitleWrap .closeBtn {
+  float: right;
+  margin: 14px 15px;
+  width: 40px;
+  height: 40px;
+  background-position: -154px -59px;
+  cursor: pointer;
+}
+.lightbox .lightboxContent .optionsWrap {
+  padding: 25px;
+  height: 160px;
+  overflow: auto;
+}
+.lightbox .lightboxContent .optionsWrap .production {
+  font-size: 1.2rem;
+  color: #585858;
+  font-weight: 400;
+}
+.lightbox .lightboxContent .optionsWrap select {
+  width: 100%;
+  height: 45px;
+}
+.lightbox .lightboxContent .optionsWrap select option {
+  font-size: 1.4rem;
+}
+.lightbox .lightboxContent .summitWrap {
+  background-color: #ECF0F1;
+  width: calc(100% - 50px);
+  height: 68px;
+  padding: 15px 25px;
+  border-radius: 0 0 8px 8px;
+}
+.lightbox .lightboxContent .summitWrap .btn {
+  width: 100%;
+}
+
 @media screen and (max-width: 1280px) {
   html, body {
     font-size: 65%;
   }
 
+  .production {
+    line-height: 1.8rem;
+  }
+
   .cartWrap .addCart {
     width: 900px;
-  }
-  .cartWrap .addCart .prdouctList .productInfoWrap .production {
-    line-height: 1.8rem;
   }
   .cartWrap .addCart .prdouctList .productInfoWrap .description {
     line-height: 1.6rem;
@@ -936,9 +1007,6 @@ button:focus {
   .cartWrap .addCart .prdouctList .cartImg {
     width: 90%;
   }
-  .cartWrap .addCart .prdouctList .productInfoWrap .production {
-    width: 100%;
-  }
   .cartWrap .addCart .prdouctList .productInfoWrap .price {
     line-height: 1.8rem;
   }
@@ -982,6 +1050,12 @@ button:focus {
   .startPayWrap .receivePackage, .startPayWrap .name, .startPayWrap .receiveSessions, .startPayWrap .payMethod, .startPayWrap .phone, .startPayWrap .note {
     width: 100%;
   }
+
+  .lightbox .lightboxContent .summitWrap {
+    height: 56px;
+    position: absolute;
+    bottom: 0;
+  }
 }
 @media screen and (max-width: 480px) {
   html, body {
@@ -999,6 +1073,21 @@ button:focus {
 
   .startPayWrap .shippingInfoWrap {
     margin-bottom: 20px;
+  }
+
+  .lightbox .lightboxContent {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .lightbox .lightboxContent .optionsWrap {
+    height: calc(100vh - 206px);
+  }
+  .lightbox .lightboxContent .optionsWrap .production {
+    font-size: 1.4rem;
+  }
+  .lightbox .summitWrap {
+    border-radius: 0;
   }
 }
 
