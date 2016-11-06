@@ -8,20 +8,25 @@ $(function () {
   function addOrder () {
     var url = apiUrl + '?consumer_key=' + ck + '&consumer_secret=' + cs
 
+    var buyerName = $('#buyer-name').val()
+    var buyerAddress = $('#buyer-address').val()
+    var buyerPhone = $('#buyer-phone').val()
+    var buyerNotes = $('#buyer-notes').val()
+
     $.post(url, {
       billing:{
-        first_name: "王小明",
-        address_1: "台北市大安區基隆路一段133巷7樓之3",
-        phone: '12345678'
+        first_name: buyerName,
+        address_1: buyerAddress,
+        phone: buyerPhone
       },
       shipping:{
-        first_name: '王小明',
-        address_1: "台北市大安區基隆路一段133巷7樓之3",
+        first_name: buyerName,
+        address_1: buyerAddress
       },
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
-      customer_note: '早上10點收貨'
+      customer_note: buyerNotes
     }).done(function () {
 
     }).fail(function () {
