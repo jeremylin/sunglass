@@ -1,0 +1,126 @@
+.redStar, .sellRed, .shipMethod, .must {
+  color: #D30909;
+}
+
+.uk-button {
+  padding: 10px 0;
+  font-size: 1.4rem;
+  background: #dcba7d;
+  color: #fff;
+  text-shadow: none;
+}
+.uk-button:hover {
+  background: #f9d674;
+  color: #925b38;
+}
+
+.uk-h2 [class*="uk-icon"] {
+  margin-right: 10px;
+}
+
+#countdown.uk-text-center {
+  background-color: #EEEEEF;
+  padding: 30px 0;
+}
+#countdown .countDownTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+#buy_items {
+  margin: 40px auto;
+  font-size: 1.2rem;
+}
+#buy_items .uk-grid .uk-panel-box {
+  padding: 35px 20px;
+}
+#buy_items .uk-grid .uk-panel-box img {
+  width: 100%;
+}
+#buy_items .uk-grid .uk-panel-box-secondary .uk-panel-title.sellRed {
+  color: #D30909;
+  font-size: 1.6rem;
+}
+#buy_items .uk-grid .production {
+  height: 110px;
+  margin-top: 15px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 800;
+}
+#buy_items .uk-grid .production .description {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #949494;
+  font-weight: 400;
+}
+#buy_items .uk-grid .price {
+  font-size: 1.6rem;
+  margin: 10px 0 15px;
+  line-height: 2.0rem;
+}
+#buy_items .uk-grid .price .specialPrice {
+  color: #D30909;
+  font-weight: 800;
+}
+#buy_items .uk-grid .price .originPrice {
+  font-size: 1.2rem;
+  color: #777777;
+  text-decoration: line-through;
+}
+
+#start_payment_wrap, #addressing {
+  padding: 60px 0;
+}
+#start_payment_wrap .uk-block, #addressing .uk-block {
+  padding: 20px 0 60px;
+}
+
+#start_payment_wrap {
+  background: #f3f3f3;
+}
+#start_payment_wrap .uk-block.emptyCart {
+  font-size: 1.4rem;
+  color: #6d6d6d;
+}
+#start_payment_wrap .uk-block .uk-list {
+  font-size: 1.2rem;
+}
+#start_payment_wrap .uk-block .uk-button {
+  background: #ffffff;
+  padding: 4px 8px;
+  color: #6d6d6d;
+  margin-right: 10px;
+}
+
+#addressing {
+  background: #e8e8e8;
+}
+#addressing .uk-h3 {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+#addressing .uk-h3 .shipMethod {
+  padding: 0 5px;
+}
+#addressing .explain {
+  margin: 0 0 40px;
+  color: #9c9c9c;
+}
+#addressing .uk-form-label {
+  font-size: 16px;
+}
+#addressing .uk-form-label .must {
+  padding-left: 3px;
+}
+
+footer {
+  background: #e8e8e8;
+}
+footer .copyright {
+  height: 40px;
+  line-height: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
