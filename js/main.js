@@ -13,7 +13,7 @@ $(function () {
   function fillModalData (e) {
     selectedItem = {}
 
-    var $modal = $('#choose-number')
+    var $modal = $('#choose-quantity')
     var $target = $(e.target).parent('.item')
 
     selectedItem.id = $target.data('item-id')
@@ -25,27 +25,27 @@ $(function () {
 
   function addToCart (e) {
     var $list = $('#cart-list')
-    var $target = $($(e.target).parents('#choose-number'))
+    var $target = $($(e.target).parents('#choose-quantity'))
     var item = $('#cart-item-template').clone()
 
-    selectedItem.number = parseInt($target.find('option:selected').val())
+    selectedItem.quantity = parseInt($target.find('option:selected').val())
 
     item.removeClass('uk-hidden')
       .find('.item-title')
       .text(selectedItem.title)
 
-    item.find('.item-number')
-      .text(selectedItem.number)
+    item.find('.item-quantity')
+      .text(selectedItem.quantity)
 
     item.find('.item-price')
-      .text(selectedItem.number * selectedItem.price)
+      .text(selectedItem.quantity * selectedItem.price)
 
     item.find('.remove-from-cart')
       .click(removeFromCart)
 
     $list.append(item)
 
-    UIkit.modal('#choose-number').hide()
+    UIkit.modal('#choose-quantity').hide()
 
     selectedItems.push(selectedItem)
 
@@ -60,6 +60,8 @@ $(function () {
   }
 
   function addOrder () {
+    if (selectedItems.length == 0) return
+
     var url = apiUrl + '?consumer_key=' + ck + '&consumer_secret=' + cs
 
     var buyerName = $('#buyer-name').val()
@@ -104,8 +106,14 @@ $(function () {
 
     if ($('#cart-list li').length > 1) {
       $('#no-item-in-cart').addClass('uk-hidden')
+
+      $('#cart-list').removeClass('uk-hidden')
+      $('#shipping-and-amount').removeClass('uk-hidden')
     } else {
       $('#no-item-in-cart').removeClass('uk-hidden')
+
+      $('#cart-list').addClass('uk-hidden')
+      $('#shipping-and-amount').addClass('uk-hidden')
     }
   }
 })
