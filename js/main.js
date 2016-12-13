@@ -16,6 +16,7 @@ $(function () {
     var $modal = $('#choose-number')
     var $target = $(e.target).parent('.item')
 
+    selectedItem.id = $target.data('item-id')
     selectedItem.title = $target.find('.item-title').text()
     selectedItem.price = parseInt($target.find('.item-price').text())
 
@@ -46,6 +47,8 @@ $(function () {
 
     UIkit.modal('#choose-number').hide()
 
+    selectedItems.push(selectedItem)
+
     caculateAmount()
   }
 
@@ -74,6 +77,12 @@ $(function () {
         first_name: buyerName,
         address_1: buyerAddress
       },
+      line_items: [
+        {
+          product_id: 14,
+          quantity: 1
+        }
+      ],
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
