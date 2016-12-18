@@ -5,10 +5,17 @@ $(function () {
   var selectedItem = {}
   var selectedItems = []
 
-  $('#confirm').click(addOrder)
   $('#confirm-add-to-cart').click(addToCart)
   $('.add-to-cart').click(fillModalData)
   $('.remove-from-cart').click(removeFromCart)
+
+  $('#delivery-form').submit(addOrder)
+  var validator = $('#delivery-form').validate()
+
+  $.extend($.validator.messages, {
+    required: "此欄位為必填",
+  })
+
 
   function fillModalData (e) {
     selectedItem = {}
@@ -60,7 +67,7 @@ $(function () {
   }
 
   function addOrder () {
-    if (selectedItems.length == 0) return
+    if (selectedItems.length == 0) return false
 
     var url = apiUrl + '?consumer_key=' + ck + '&consumer_secret=' + cs
 
@@ -94,6 +101,8 @@ $(function () {
     }).fail(function () {
 
     })
+
+    return false
   }
 
   function caculateAmount () {

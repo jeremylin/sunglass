@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.gradient.min.css" />
         <link rel="stylesheet" href="custom/A/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
     </head>
     <body>
@@ -152,24 +153,24 @@
             </div>
         </section>
 
-        <section id="delivery-form" class="uk-width-4-5 uk-container-center">
+        <section class="uk-width-4-5 uk-container-center">
             <h2 class="uk-h2"><i class="uk-icon-truck"></i>寄送資訊</h2>
             <div class="uk-block">
                 <div class=" uk-width-small-9-10 uk-container-center">
                     <h3 class="uk-h3">訂單目前僅提供貨到付款方式</h3>
                     <p>貨到付款是一種安全，無風險的付款方式，您只需在收到您的貨物支付。</p>
-                    <form class="uk-form uk-form-stacked">
+                    <form id="delivery-form" class="uk-form uk-form-stacked" >
                         <div class="uk-grid">
                             <div class="uk-width-1-1 uk-width-small-1-2">
                                 <label class="uk-form-label" for="">姓名*</label>
                                 <div class="uk-form-controls">
-                                    <input id="buyer-name" type="text" placeholder="收件人姓名" class="uk-width-1-1 uk-form-large">
+                                    <input name="name" id="buyer-name" type="text" placeholder="收件人姓名" class="uk-width-1-1 uk-form-large" required>
                                 </div>
                             </div>
                             <div class="uk-width-1-1 uk-width-small-1-2">
                                 <label class="uk-form-label" for="">電話*</label>
                                 <div class="uk-form-controls">
-                                    <input id="buyer-phone" type="text" placeholder="聯絡電話" class="uk-width-1-1 uk-form-large">
+                                    <input name="phone" id="buyer-phone" type="text" placeholder="聯絡電話" class="uk-width-1-1 uk-form-large" required>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +178,7 @@
                             <label class="uk-form-label" for="">收貨地址*</label>
                             <div class="uk-width-1-1">
                                 <div class="uk-form-controls">
-                                    <input id="buyer-address" type="text" placeholder="收貨地址" class="uk-width-1-1 uk-form-large">
+                                    <input name="address" id="buyer-address" type="text" placeholder="收貨地址" class="uk-width-1-1 uk-form-large" required>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +186,7 @@
                             <div class="uk-width-1-1 uk-width-small-1-2">
                                 <label class="uk-form-label" for="">收貨時段*</label>
                                 <div class="uk-form-controls">
-                                    <select id="received-time" class="uk-width-1-1 uk-form-large">
+                                    <select id="received-time" class="uk-width-1-1 uk-form-large" required>
                                         <option>不指定時段</option>
                                         <option>中午前</option>
                                         <option>12 - 17 時</option>
@@ -202,7 +203,7 @@
                         </div>
                         <div class="uk-grid">
                             <div class="uk-width-1-1">
-                                <button id="confirm" class="uk-button uk-width-1-1 uk-button-large" type="button">送出訂單</button>
+                                <button id="confirm" class="uk-button uk-width-1-1 uk-button-large" type="submit">送出訂單</button>
                             </div>
                         </div>
                     </form>
