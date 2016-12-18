@@ -8,6 +8,11 @@ $(function () {
   $('#confirm-add-to-cart').click(addToCart)
   $('.add-to-cart').click(fillModalData)
   $('.remove-from-cart').click(removeFromCart)
+  $('#countdown-wording').countdown("2017/01/01", function(event) {
+    $(this).text(
+      event.strftime('%-d 天 %-H 時 %M 分 %S 秒')
+    )
+  })
 
   $('#delivery-form').submit(addOrder)
   var validator = $('#delivery-form').validate()
