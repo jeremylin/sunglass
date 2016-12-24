@@ -3,19 +3,17 @@
 }
 
 .uk-button {
-  padding: 10px 0;
-  font-size: 1.4rem;
-  background: #dcba7d;
-  color: #fff;
+  padding: 6px 0;
+  font-size: 1.2rem;
   text-shadow: none;
-}
-.uk-button:hover {
-  background: #f9d674;
-  color: #925b38;
 }
 
 .uk-h2 [class*="uk-icon"] {
   margin-right: 10px;
+}
+
+.receipt section {
+  padding: 30px 20px;
 }
 
 #countdown.uk-text-center {
