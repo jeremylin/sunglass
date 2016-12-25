@@ -641,6 +641,11 @@ button:focus {
 	}
 }
 
+/* sticky */
+[data-uk-sticky].uk-active {
+    background: #EEEEEF;
+}
+
 @media screen and (max-width: 1280px) {
     // 如果使用者之視窗寬度介於 1025px ~ 1280px，將會再載入這裡的 CSS。
     html, body {

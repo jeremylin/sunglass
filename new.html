@@ -12,6 +12,7 @@
         <link rel="icon" href="images/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/sticky.gradient.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/notify.gradient.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.gradient.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.css">
         <link rel="stylesheet" href="custom/A/style.css">
@@ -23,6 +24,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/sticky.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/notify.min.js"></script>
     </head>
     <body>
         <section id="product-introduction" class="uk-width-1-1 uk-container-center uk-text-center">
@@ -43,7 +45,7 @@
             <div id="countdown-wording" data-uk-sticky></div>
         </div>
 
-        <section id="buy-items" class="uk-width-9-10 uk-container-center">
+        <section id="buy-items" class="uk-width-4-5 uk-container-center">
             <div class="uk-grid">
                 <div class="uk-width-1-1 uk-width-medium-1-3 uk-grid-margin">
                     <div class="uk-panel uk-panel-box uk-panel-box-secondary item" data-item-id="14">
@@ -118,46 +120,42 @@
             <h2 class="uk-h2"><i class="uk-icon-shopping-bag"></i>我的購物清單</h2>
             <div class="uk-block">
                 <div id="no-item-in-cart" class="uk-text-center uk-alert-success uk-block uk-margin-bottom">您目前尚未選購任何商品！</div>
-                <div class="uk-width-small-1-1 uk-container-center">
-                    <ul id="cart-list" class="uk-list uk-list-line uk-hidden">
-                        <li id="cart-item-template" class="uk-hidden">
-                            <div class="uk-grid">
-                                <div class="uk-width-medium-2-3">
-                                    <button class="remove-from-cart uk-button-small uk-button uk-hidden-small"><i class="uk-icon-trash"></i></button>
-                                    <span class="item-title"></span>
-                                </div>
-                                <div class="uk-width-medium-1-3 uk-grid">
-                                    <div class="uk-width-1-3 uk-visible-small">
-                                        <button class="remove-from-cart uk-button-large uk-button"><i class="uk-icon-trash uk-icon-medium"></i></button>
-                                    </div>
-                                    <div class="uk-grid uk-width-2-3 uk-width-medium-1-1 uk-float-right">
-                                        <div class="uk-width-1-2 uk-text-right">
-                                            <div class="uk-visible-small">數量</div>
-                                            <div>x<span class="item-quantity"></span></div>
-                                        </div>
-                                        <div class="uk-width-1-2 uk-text-right">
-                                            <div class="uk-visible-small">小計</div>
-                                            <div><span class="item-price"></span>元</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul id="shipping-and-amount" class="uk-list uk-list-line uk-hidden">
-                        <li>
-                            <div class="uk-grid uk-width-2-3 uk-width-medium-1-3 uk-float-right">
-                                <div class="uk-width-1-2 uk-text-right">運費</div>
-                                <div class="uk-width-1-2 uk-text-right">免運</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="uk-grid uk-width-2-3 uk-width-medium-1-3 uk-float-right">
-                                <div class="uk-width-1-2 uk-text-right">總計</div>
-                                <div class="uk-width-1-2 uk-text-right"><span id="total-amount"></span>元</div>
-                            </div>
-                        </li>
-                    </ul>
+
+                <table id="cart-list" class="uk-table uk-width-small-9-10 uk-hidden">
+                    <thead>
+                        <tr>
+                            <th>產品名稱</th><th>數量</th><th>小計</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="cart-item-template" class="uk-hidden">
+                            <td>
+                                <button class="remove-from-cart uk-button-small uk-button"><i class="uk-icon-trash"></i></button>
+                                <span class="item-title"></span>
+                            </td>
+                            <td>
+                                <div>x<span class="item-quantity"></span></div>
+                            </td>
+                            <td>
+                                <div><span class="item-price"></span>元</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot id="shipping-and-amount">
+                        <tr>
+                            <td>運費</td>
+                            <td></td>
+                            <td><span id="shipping-fee"></span>元</td>
+                        </tr>
+                        <tr>
+                            <td>總計</td>
+                            <td>x<span id="total-quantity"></span></td>
+                            <td><span id="total-amount"></span>元</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="uk-width-small-9-10 uk-container-center">
                     <a href="#delivery-form" class="uk-button uk-width-1-1 uk-button-large" data-uk-smooth-scroll>下一步</a>
                 </div>
             </div>
@@ -216,6 +214,17 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="uk-width-4-5 uk-container-center">
+            <div class="uk-grid uk-margin">
+                <div class="uk-width-1-1 uk-width-small-1-2 uk-text-center uk-margin-small-top">
+                    <a href="" class="uk-button uk-width-1-1 uk-button-success">Line 客服</a>
+                </div>
+                <div class="uk-width-1-1 uk-width-small-1-2 uk-text-center uk-margin-small-top">
+                    <a href="" class="uk-button uk-width-1-1 uk-button-primary">Facebook 客服</a>
                 </div>
             </div>
         </section>
