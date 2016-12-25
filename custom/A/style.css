@@ -1,4 +1,4 @@
-.redStar, .sellRed, .shipMethod, .must {
+.redStar, .sellRed, .shipMethod, .specialPrice {
   color: #D30909;
 }
 
@@ -20,52 +20,37 @@
   background-color: #EEEEEF;
   padding: 30px 0;
 }
-#countdown .countDownTitle {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 40px;
-}
 
-#buy_items {
+#buy-items {
   margin: 40px auto;
   font-size: 1.2rem;
 }
-#buy_items .uk-grid .uk-panel-box {
-  padding: 35px 20px;
+#buy-items .uk-grid .uk-panel-box {
+  padding: 20px 16px;
 }
-#buy_items .uk-grid .uk-panel-box img {
+#buy-items .uk-grid .uk-panel-box img {
   width: 100%;
 }
-#buy_items .uk-grid .uk-panel-box-secondary .uk-panel-title.sellRed {
-  color: #D30909;
-  font-size: 1.6rem;
+#buy-items .titleName {
+  height: 80px;
 }
-#buy_items .uk-grid .production {
-  height: 110px;
-  margin-top: 15px;
-  font-size: 1.6rem;
-  line-height: 2.2rem;
-  font-weight: 800;
-}
-#buy_items .uk-grid .production .description {
-  font-size: 1.2rem;
+#buy-items .titleName .item-title {
+  font-size: 1.3rem;
   line-height: 1.8rem;
-  color: #949494;
-  font-weight: 400;
 }
-#buy_items .uk-grid .price {
-  font-size: 1.6rem;
-  margin: 10px 0 15px;
-  line-height: 2.0rem;
+#buy-items .titleName .item-addon {
+  font-size: 1.0rem;
+  line-height: 1.6rem;
 }
-#buy_items .uk-grid .price .specialPrice {
-  color: #D30909;
-  font-weight: 800;
+#buy-items .specialPrice {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
-#buy_items .uk-grid .price .originPrice {
-  font-size: 1.2rem;
-  color: #777777;
+#buy-items .originalPrice {
+  font-size: 1.0rem;
+  line-height: 1.6rem;
   text-decoration: line-through;
+  margin-bottom: 20px;
 }
 
 #start_payment_wrap, #addressing {
