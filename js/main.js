@@ -8,8 +8,15 @@ $(function () {
   $('#confirm-add-to-cart').click(addToCart)
   $('.add-to-cart').click(fillModalData)
   $('.remove-from-cart').click(removeFromCart)
+
   $('#countdown-wording').flipcountdown({
     beforeDateTime: '1/01/2017 00:00:00'
+  })
+  $('#countdown-wording').on('active.uk.sticky', function () {
+    $(this).css('padding', '10px')
+  })
+  $('#countdown-wording').on('inactive.uk.sticky', function () {
+    $(this).css('padding', '0')
   })
 
   $('#delivery-form').submit(addOrder)
@@ -34,7 +41,7 @@ $(function () {
   }
 
   function addToCart (e) {
-    var $list = $('#cart-list')
+    var $list = $('#cart-list tbody')
     var $target = $($(e.target).parents('#choose-quantity'))
     var item = $('#cart-item-template').clone()
 
@@ -56,6 +63,7 @@ $(function () {
     $list.append(item)
 
     UIkit.modal('#choose-quantity').hide()
+    UIkit.notify('已成功將 ' + selectedItem.title + ' 加入購物車', {status:'success'})
 
     selectedItems.push(selectedItem)
 
@@ -63,7 +71,7 @@ $(function () {
   }
 
   function removeFromCart (e) {
-    var $target = $($(e.target).parents('li'))
+    var $target = $($(e.target).parents('tr'))
     $target.remove()
 
     caculateAmount()
@@ -110,22 +118,27 @@ $(function () {
 
   function caculateAmount () {
     var amount = 0
+    var quantity = 0
+
     $('#cart-list .item-price').toArray().forEach((item) => {
       amount += parseInt($(item).text()) || 0
     })
 
+    $('#cart-list .item-quantity').toArray().forEach((item) => {
+      quantity += parseInt($(item).text()) || 0
+    })
+
+    $('#total-quantity').text(quantity)
     $('#total-amount').text(amount)
 
-    if ($('#cart-list li').length > 1) {
+    if ($('#cart-list tbody tr').length > 1) {
       $('#no-item-in-cart').addClass('uk-hidden')
 
       $('#cart-list').removeClass('uk-hidden')
-      $('#shipping-and-amount').removeClass('uk-hidden')
     } else {
       $('#no-item-in-cart').removeClass('uk-hidden')
 
       $('#cart-list').addClass('uk-hidden')
-      $('#shipping-and-amount').addClass('uk-hidden')
     }
   }
 })
