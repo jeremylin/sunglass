@@ -1,4 +1,4 @@
-.redStar, .sellRed, .shipMethod, .specialPrice {
+.redStar, .sellRed, .shipMethod, .specialPrice, .must {
   color: #D30909;
 }
 
@@ -35,12 +35,13 @@
   height: 80px;
 }
 #buy-items .titleName .item-title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.8rem;
 }
 #buy-items .titleName .item-addon {
-  font-size: 1.0rem;
-  line-height: 1.6rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  padding: 4px 0;
 }
 #buy-items .specialPrice {
   font-size: 1.3rem;
@@ -50,52 +51,28 @@
   font-size: 1.0rem;
   line-height: 1.6rem;
   text-decoration: line-through;
-  margin-bottom: 20px;
 }
 
-#start_payment_wrap, #addressing {
-  padding: 60px 0;
-}
-#start_payment_wrap .uk-block, #addressing .uk-block {
-  padding: 20px 0 60px;
-}
-
-#start_payment_wrap {
-  background: #f3f3f3;
-}
-#start_payment_wrap .uk-block.emptyCart {
-  font-size: 1.4rem;
-  color: #6d6d6d;
-}
-#start_payment_wrap .uk-block .uk-list {
-  font-size: 1.2rem;
-}
-#start_payment_wrap .uk-block .uk-button {
-  background: #ffffff;
+#cart-list #shipping-and-amount td {
   padding: 4px 8px;
-  color: #6d6d6d;
-  margin-right: 10px;
+}
+#cart-list .remove-from-cart.uk-button-small {
+  width: 38px;
+  position: absolute;
+  left: 0;
+}
+#cart-list .item-title {
+  padding-left: 42px;
+  min-height: 38px;
+}
+#cart-list .coupon {
+  color: #00a8e6;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-#addressing {
-  background: #e8e8e8;
-}
-#addressing .uk-h3 {
-  margin-bottom: 4px;
-  font-size: 20px;
-}
-#addressing .uk-h3 .shipMethod {
-  padding: 0 5px;
-}
-#addressing .explain {
-  margin: 0 0 40px;
-  color: #9c9c9c;
-}
-#addressing .uk-form-label {
-  font-size: 16px;
-}
-#addressing .uk-form-label .must {
-  padding-left: 3px;
+#delivery-form .uk-grid {
+  margin-top: 0;
 }
 
 footer {
