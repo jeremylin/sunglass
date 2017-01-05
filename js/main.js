@@ -91,8 +91,9 @@ $(function () {
     var buyerNotes = $('#buyer-notes').val()
 
     var confirmButton = $('#confirm')
-    //confirmButton.attr('disabled', true)
-    //confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
+
+    confirmButton.attr('disabled', true)
+    confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
 
     $.post(apiUrl, {
       billing:{
