@@ -1,7 +1,5 @@
 $(function () {
-  var apiUrl = 'https://shop.silverskill.org/wp-json/wc/v1/orders'
-  var ck = 'ck_bcf71a9d81fc4979e15a1b14f43f06f395776a5a'
-  var cs = 'cs_a8f3270ae58af2214b6ee7141c838b74f168d0f9'
+  var apiUrl = 'http://192.168.99.100/order'
   var selectedItem = {}
   var selectedItems = []
 
@@ -78,16 +76,21 @@ $(function () {
   }
 
   function addOrder () {
-    if (selectedItems.length == 0) return false
-
-    var url = apiUrl + '?consumer_key=' + ck + '&consumer_secret=' + cs
+    if (selectedItems.length == 0) {
+      UIkit.notify('您目前尚未選購任何商品！', {status:'danger'})
+      return false
+    }
 
     var buyerName = $('#buyer-name').val()
     var buyerAddress = $('#buyer-address').val()
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
 
-    $.post(url, {
+    var confirmButton = $('#confirm')
+    confirmButton.attr('disabled', true)
+    confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
+
+    $.post(apiUrl, {
       billing:{
         first_name: buyerName,
         address_1: buyerAddress,
