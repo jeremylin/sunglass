@@ -30,22 +30,22 @@ $(function () {
     var $modal = $('#choose-quantity')
     var $target = $(e.target).parent('.item')
 
-    selectedItem.id = $target.data('item-id')
-    selectedItem.title = $target.find('.item-title').text()
+    selectedItem.product_id = $target.data('item-id')
+    selectedItem.name = $target.find('.item-title').text()
     selectedItem.price = parseInt($target.find('.item-price').text())
 
-    $modal.find('.item-title').text(selectedItem.title)
+    $modal.find('.item-title').text(selectedItem.name)
   }
 
   function addToCart (e) {
     var $target = $(e.target).parent('.item')
 
-    selectedItem.id = $target.data('item-id')
-    selectedItem.title = $target.find('.item-title').text()
+    selectedItem.product_id = $target.data('item-id')
+    selectedItem.name = $target.find('.item-title').text()
     selectedItem.price = parseInt($target.find('.item-price').text())
     selectedItem.quantity = parseInt($target.find('option:selected').val())
 
-    UIkit.notify('已成功將 ' + selectedItem.title + ' 加入購物車', {status:'success'})
+    UIkit.notify('已成功將 ' + selectedItem.name + ' 加入購物車', {status:'success'})
 
     selectedItems.push(selectedItem)
     selectedItem = {}
@@ -54,7 +54,7 @@ $(function () {
       var inItem = false
       for (key in previous) {
 
-        if (previous[key].id == after.id) {
+        if (previous[key].product_id == after.product_id) {
           previous[key].quantity += after.quantity
           inItem = true
           break
@@ -91,8 +91,8 @@ $(function () {
     var buyerNotes = $('#buyer-notes').val()
 
     var confirmButton = $('#confirm')
-    confirmButton.attr('disabled', true)
-    confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
+    //confirmButton.attr('disabled', true)
+    //confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
 
     $.post(apiUrl, {
       billing:{
@@ -104,12 +104,7 @@ $(function () {
         first_name: buyerName,
         address_1: buyerAddress
       },
-      line_items: [
-        {
-          product_id: 14,
-          quantity: 1
-        }
-      ],
+      line_items: selectedItems,
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
@@ -134,7 +129,7 @@ $(function () {
       $item.removeClass('uk-hidden')
         .removeAttr('id')
         .find('.item-title')
-        .text(item.title)
+        .text(item.name)
 
       $item.find('.item-quantity')
         .text(item.quantity)
