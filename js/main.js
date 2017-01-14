@@ -3,8 +3,7 @@ $(function () {
   var selectedItem = {}
   var selectedItems = []
 
-  $('#confirm-add-to-cart').click(addToCart)
-  $('.add-to-cart').click(fillModalData)
+  $('.add-to-cart').click(addToCart)
   $('.remove-from-cart').click(removeFromCart)
 
   $('#countdown-wording').flipcountdown({
@@ -39,32 +38,37 @@ $(function () {
   }
 
   function addToCart (e) {
-    var $list = $('#cart-list tbody')
-    var $target = $($(e.target).parents('#choose-quantity'))
-    var item = $('#cart-item-template').clone()
+    var $target = $(e.target).parent('.item')
 
+    selectedItem.id = $target.data('item-id')
+    selectedItem.title = $target.find('.item-title').text()
+    selectedItem.price = parseInt($target.find('.item-price').text())
     selectedItem.quantity = parseInt($target.find('option:selected').val())
 
-    item.removeClass('uk-hidden')
-      .find('.item-title')
-      .text(selectedItem.title)
-
-    item.find('.item-quantity')
-      .text(selectedItem.quantity)
-
-    item.find('.item-price')
-      .text(selectedItem.quantity * selectedItem.price)
-
-    item.find('.remove-from-cart')
-      .click(removeFromCart)
-
-    $list.append(item)
-
-    UIkit.modal('#choose-quantity').hide()
     UIkit.notify('已成功將 ' + selectedItem.title + ' 加入購物車', {status:'success'})
 
     selectedItems.push(selectedItem)
+    selectedItem = {}
 
+    selectedItems = selectedItems.reduce(function (previous, after) {
+      var inItem = false
+      for (key in previous) {
+
+        if (previous[key].id == after.id) {
+          previous[key].quantity += after.quantity
+          inItem = true
+          break
+        }
+      }
+
+      if (!inItem) {
+        previous.push(after)
+      }
+
+      return previous
+    }, [])
+
+    updateCartList()
     caculateAmount()
   }
 
@@ -119,28 +123,51 @@ $(function () {
     return false
   }
 
+  function updateCartList () {
+    var $list = $('#cart-list tbody')
+
+    $list.find('tr').not('#cart-item-template').remove()
+
+    selectedItems.forEach((item) => {
+      var $item = $('#cart-item-template').clone()
+
+      $item.removeClass('uk-hidden')
+        .removeAttr('id')
+        .find('.item-title')
+        .text(item.title)
+
+      $item.find('.item-quantity')
+        .text(item.quantity)
+
+      $item.find('.item-price')
+        .text(item.quantity * item.price)
+
+      $item.find('.remove-from-cart')
+        .click(removeFromCart)
+
+      $list.append($item)
+    })
+  }
+
   function caculateAmount () {
     var amount = 0
     var quantity = 0
 
-    $('#cart-list .item-price').toArray().forEach((item) => {
-      amount += parseInt($(item).text()) || 0
+    selectedItems.forEach(function (item) {
+      amount += item.price * item.quantity
     })
-
-    $('#cart-list .item-quantity').toArray().forEach((item) => {
-      quantity += parseInt($(item).text()) || 0
+    selectedItems.forEach(function (item) {
+      quantity += item.quantity
     })
 
     $('#total-quantity').text(quantity)
     $('#total-amount').text(amount)
 
-    if ($('#cart-list tbody tr').length > 1) {
+    if (selectedItems.length >= 1) {
       $('#no-item-in-cart').addClass('uk-hidden')
-
       $('#cart-list').removeClass('uk-hidden')
     } else {
       $('#no-item-in-cart').removeClass('uk-hidden')
-
       $('#cart-list').addClass('uk-hidden')
     }
   }
