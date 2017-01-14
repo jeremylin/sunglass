@@ -53,7 +53,6 @@ $(function () {
     selectedItems = selectedItems.reduce(function (previous, after) {
       var inItem = false
       for (key in previous) {
-
         if (previous[key].product_id == after.product_id) {
           previous[key].quantity += after.quantity
           inItem = true
