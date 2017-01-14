@@ -1,12 +1,9 @@
 $(function () {
-  var apiUrl = 'https://shop.silverskill.org/wp-json/wc/v1/orders'
-  var ck = 'ck_bcf71a9d81fc4979e15a1b14f43f06f395776a5a'
-  var cs = 'cs_a8f3270ae58af2214b6ee7141c838b74f168d0f9'
+  var apiUrl = 'http://192.168.99.100/order'
   var selectedItem = {}
   var selectedItems = []
 
-  $('#confirm-add-to-cart').click(addToCart)
-  $('.add-to-cart').click(fillModalData)
+  $('.add-to-cart').click(addToCart)
   $('.remove-from-cart').click(removeFromCart)
 
   $('#countdown-wording').flipcountdown({
@@ -33,40 +30,45 @@ $(function () {
     var $modal = $('#choose-quantity')
     var $target = $(e.target).parent('.item')
 
-    selectedItem.id = $target.data('item-id')
-    selectedItem.title = $target.find('.item-title').text()
+    selectedItem.product_id = $target.data('item-id')
+    selectedItem.name = $target.find('.item-title').text()
     selectedItem.price = parseInt($target.find('.item-price').text())
 
-    $modal.find('.item-title').text(selectedItem.title)
+    $modal.find('.item-title').text(selectedItem.name)
   }
 
   function addToCart (e) {
-    var $list = $('#cart-list tbody')
-    var $target = $($(e.target).parents('#choose-quantity'))
-    var item = $('#cart-item-template').clone()
+    var $target = $(e.target).parent('.item')
 
+    selectedItem.product_id = $target.data('item-id')
+    selectedItem.name = $target.find('.item-title').text()
+    selectedItem.price = parseInt($target.find('.item-price').text())
     selectedItem.quantity = parseInt($target.find('option:selected').val())
 
-    item.removeClass('uk-hidden')
-      .find('.item-title')
-      .text(selectedItem.title)
-
-    item.find('.item-quantity')
-      .text(selectedItem.quantity)
-
-    item.find('.item-price')
-      .text(selectedItem.quantity * selectedItem.price)
-
-    item.find('.remove-from-cart')
-      .click(removeFromCart)
-
-    $list.append(item)
-
-    UIkit.modal('#choose-quantity').hide()
-    UIkit.notify('已成功將 ' + selectedItem.title + ' 加入購物車', {status:'success'})
+    UIkit.notify('已成功將 ' + selectedItem.name + ' 加入購物車', {status:'success'})
 
     selectedItems.push(selectedItem)
+    selectedItem = {}
 
+    selectedItems = selectedItems.reduce(function (previous, after) {
+      var inItem = false
+      for (key in previous) {
+
+        if (previous[key].product_id == after.product_id) {
+          previous[key].quantity += after.quantity
+          inItem = true
+          break
+        }
+      }
+
+      if (!inItem) {
+        previous.push(after)
+      }
+
+      return previous
+    }, [])
+
+    updateCartList()
     caculateAmount()
   }
 
@@ -78,16 +80,21 @@ $(function () {
   }
 
   function addOrder () {
-    if (selectedItems.length == 0) return false
-
-    var url = apiUrl + '?consumer_key=' + ck + '&consumer_secret=' + cs
+    if (selectedItems.length == 0) {
+      UIkit.notify('您目前尚未選購任何商品！', {status:'danger'})
+      return false
+    }
 
     var buyerName = $('#buyer-name').val()
     var buyerAddress = $('#buyer-address').val()
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
 
-    $.post(url, {
+    var confirmButton = $('#confirm')
+    //confirmButton.attr('disabled', true)
+    //confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
+
+    $.post(apiUrl, {
       billing:{
         first_name: buyerName,
         address_1: buyerAddress,
@@ -97,12 +104,7 @@ $(function () {
         first_name: buyerName,
         address_1: buyerAddress
       },
-      line_items: [
-        {
-          product_id: 14,
-          quantity: 1
-        }
-      ],
+      line_items: selectedItems,
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
@@ -116,28 +118,51 @@ $(function () {
     return false
   }
 
+  function updateCartList () {
+    var $list = $('#cart-list tbody')
+
+    $list.find('tr').not('#cart-item-template').remove()
+
+    selectedItems.forEach((item) => {
+      var $item = $('#cart-item-template').clone()
+
+      $item.removeClass('uk-hidden')
+        .removeAttr('id')
+        .find('.item-title')
+        .text(item.name)
+
+      $item.find('.item-quantity')
+        .text(item.quantity)
+
+      $item.find('.item-price')
+        .text(item.quantity * item.price)
+
+      $item.find('.remove-from-cart')
+        .click(removeFromCart)
+
+      $list.append($item)
+    })
+  }
+
   function caculateAmount () {
     var amount = 0
     var quantity = 0
 
-    $('#cart-list .item-price').toArray().forEach((item) => {
-      amount += parseInt($(item).text()) || 0
+    selectedItems.forEach(function (item) {
+      amount += item.price * item.quantity
     })
-
-    $('#cart-list .item-quantity').toArray().forEach((item) => {
-      quantity += parseInt($(item).text()) || 0
+    selectedItems.forEach(function (item) {
+      quantity += item.quantity
     })
 
     $('#total-quantity').text(quantity)
     $('#total-amount').text(amount)
 
-    if ($('#cart-list tbody tr').length > 1) {
+    if (selectedItems.length >= 1) {
       $('#no-item-in-cart').addClass('uk-hidden')
-
       $('#cart-list').removeClass('uk-hidden')
     } else {
       $('#no-item-in-cart').removeClass('uk-hidden')
-
       $('#cart-list').addClass('uk-hidden')
     }
   }
