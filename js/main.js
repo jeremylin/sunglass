@@ -53,7 +53,6 @@ $(function () {
     selectedItems = selectedItems.reduce(function (previous, after) {
       var inItem = false
       for (key in previous) {
-
         if (previous[key].product_id == after.product_id) {
           previous[key].quantity += after.quantity
           inItem = true
@@ -91,8 +90,9 @@ $(function () {
     var buyerNotes = $('#buyer-notes').val()
 
     var confirmButton = $('#confirm')
-    //confirmButton.attr('disabled', true)
-    //confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
+
+    confirmButton.attr('disabled', true)
+    confirmButton.html('<i class="uk-icon-spinner uk-icon-spin"></i> 送出訂單中...')
 
     $.post(apiUrl, {
       billing:{
