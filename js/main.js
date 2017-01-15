@@ -73,12 +73,17 @@ $(function () {
 
   function removeFromCart (e) {
     var $target = $($(e.target).parents('tr'))
-    $target.remove()
+    var selectedItem = selectedItems.find(function (item) {
+      return item.product_id == $target.data('id')
+    })
+
+    UIkit.notify('已成功將 ' + selectedItem.name + ' 購物車從購物車移除', {status:'warning'})
 
     selectedItems = selectedItems.filter(function (item) {
       return item.product_id != $target.data('id')
     })
 
+    $target.remove()
     caculateAmount()
   }
 
