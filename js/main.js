@@ -75,6 +75,10 @@ $(function () {
     var $target = $($(e.target).parents('tr'))
     $target.remove()
 
+    selectedItems = selectedItems.filter(function (item) {
+      return item.product_id != $target.data('id')
+    })
+
     caculateAmount()
   }
 
@@ -128,6 +132,7 @@ $(function () {
 
       $item.removeClass('uk-hidden')
         .removeAttr('id')
+        .attr('data-id', item.product_id)
         .find('.item-title')
         .text(item.name)
 
