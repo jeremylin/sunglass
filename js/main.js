@@ -97,6 +97,7 @@ $(function () {
     var buyerAddress = $('#buyer-address').val()
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
+    var pickupTime = $('#picked-time>option:selected').val()
 
     var confirmButton = $('#confirm')
 
@@ -117,7 +118,7 @@ $(function () {
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
-      customer_note: buyerNotes
+      customer_note: pickupTime + ',' + buyerNotes
     }).done(function (data) {
       window.location.href = '/receipt.html?o=' + data
     }).fail(function () {
