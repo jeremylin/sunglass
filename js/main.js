@@ -1,5 +1,5 @@
 $(function () {
-  var apiUrl = 'http://192.168.99.100/order'
+  var apiUrl = 'http://api.zenda.tw/order'
   var selectedItem = {}
   var selectedItems = []
 
@@ -118,8 +118,8 @@ $(function () {
       payment_method_title:'貨到付款',
       status:'completed',
       customer_note: buyerNotes
-    }).done(function () {
-
+    }).done(function (data) {
+      window.location.href = '/receipt.html' + data
     }).fail(function () {
 
     })
