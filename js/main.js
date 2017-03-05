@@ -119,7 +119,7 @@ $(function () {
       status:'completed',
       customer_note: buyerNotes
     }).done(function (data) {
-      window.location.href = '/receipt.html' + data
+      window.location.href = '/receipt.html?o=' + data
     }).fail(function () {
 
     })
