@@ -1,0 +1,1095 @@
+@charset "UTF-8";
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  text-decoration: none;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*global*/
+html, body {
+  width: 100%;
+  font-size: 75%;
+  /* 16px*75%=12px */
+  font-family: Helvetica, Arial, "Microsoft Jhenghei", "微軟正黑體", sans-serif;
+  color: #161616;
+  background-color: #EEEEEF;
+}
+
+.section {
+  width: 100%;
+}
+
+.content {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.icon {
+  display: inline-block;
+  background-image: url(../images/icon.svg);
+  background-repeat: no-repeat;
+}
+
+.redStar, .sellTag, .specialPrice, .shipFee, .must, .takeThenPay {
+  color: #D30909;
+}
+
+.btn {
+  border: none;
+  padding: 20px 0;
+  text-align: center;
+  color: #FFFFFF;
+  border-radius: 8px;
+  background-color: #dcba7d;
+  font-size: 2.0rem;
+}
+.btn.disable {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+.btn.disable:hover {
+  background-color: #dcdcdc;
+}
+.btn:hover {
+  background-color: #f9d674;
+  color: #925b38;
+}
+
+select, input {
+  border: 1px solid #D1D1D1;
+  border-radius: 6px;
+  background-color: transparent;
+  padding: 0 10px;
+}
+select:focus, input:focus {
+  border: 1px solid #000000;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.production {
+  font-weight: 800;
+  line-height: 2.2rem;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/*圖片區*/
+.imgWrap {
+  background-color: #4a4a4a;
+}
+.imgWrap .mainProductImg {
+  width: 100%;
+  display: block;
+  margin-bottom: -2px;
+}
+
+/*時間倒數*/
+.timeWrap {
+  background-color: #EEEEEF;
+  z-index: 2;
+}
+.timeWrap .countDown {
+  text-align: center;
+  padding: 30px 0;
+}
+.timeWrap .countDown .timeWords {
+  display: block;
+}
+.timeWrap .countDown .timeWords .countDownTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 10px 0 12px;
+}
+.timeWrap.scroll-fix {
+  box-shadow: 0 1px 20px #bbb;
+}
+.timeWrap.scroll-fix .countDown {
+  padding: 10px 0;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+.timeWrap.scroll-fix .countDown .timeWords {
+  display: none;
+}
+
+/*購物方案選項*/
+.cartWrap {
+  background-color: #ffffff;
+  font-size: 1.6rem;
+}
+.cartWrap .addCart {
+  width: 1110px;
+  padding: 60px 30px 50px;
+  background-color: #FFFFFF;
+}
+.cartWrap .addCart .prdouctList {
+  position: relative;
+  width: calc(33.333% - 62px);
+  margin: 0 15px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 2px 4px 15px #ececec;
+}
+.cartWrap .addCart .prdouctList .sellTag {
+  font-size: 1.8rem;
+}
+.cartWrap .addCart .prdouctList .cartImg {
+  width: 100%;
+  margin: 10px auto;
+}
+.cartWrap .addCart .prdouctList .productInfoWrap {
+  position: relative;
+  height: 160px;
+}
+.cartWrap .addCart .prdouctList .productInfoWrap .description {
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+  color: #5B5B5B;
+}
+.cartWrap .addCart .prdouctList .productInfoWrap .price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 2.0rem;
+}
+.cartWrap .addCart .prdouctList .productInfoWrap .price .specialPrice {
+  font-weight: 600;
+}
+.cartWrap .addCart .prdouctList .productInfoWrap .price .originPrice {
+  text-decoration: line-through;
+  font-size: 1.4rem;
+  color: #777777;
+}
+.cartWrap .addCart .prdouctList .btn {
+  width: 100%;
+  margin: 25px 0 0;
+}
+
+/*開始結帳*/
+.startPayWrap {
+  background-color: #EEEEEF;
+  font-size: 1.4rem;
+  padding: 60px 0 10px;
+}
+.startPayWrap .shoppingList, .startPayWrap .paymentWrap, .startPayWrap .shippingInfoWrap {
+  width: 760px;
+  margin-bottom: 60px;
+}
+.startPayWrap .ListTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.startPayWrap .ListTitle .titleItem {
+  float: left;
+}
+.startPayWrap .ListTitle .titleItem .shoppingBagIcon, .startPayWrap .ListTitle .titleItem .paymentIcon, .startPayWrap .ListTitle .titleItem .shippingIcon {
+  width: 28px;
+  height: 28px;
+  background-size: 490%;
+  vertical-align: -6px;
+  margin-right: 10px;
+}
+.startPayWrap .ListTitle .titleItem .shoppingBagIcon {
+  background-position: -11px -35px;
+}
+.startPayWrap .ListTitle .titleItem .paymentIcon {
+  background-position: -38px -35px;
+}
+.startPayWrap .ListTitle .titleItem .shippingIcon {
+  background-position: -65px -34px;
+}
+.startPayWrap .ListTitle .switch {
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+.startPayWrap .ListTitle .openIcon, .startPayWrap .ListTitle .closeIcon {
+  width: 28px;
+  height: 28px;
+  background-size: 490%;
+}
+.startPayWrap .ListTitle .openIcon {
+  background-position: -38px -9px;
+}
+.startPayWrap .ListTitle .closeIcon {
+  background-position: -64px -9px;
+}
+.startPayWrap .listDetail {
+  background-color: #FFFFFF;
+  padding: 40px;
+  width: calc(100% - 80px);
+}
+.startPayWrap .listDetail .noProduct {
+  text-align: center;
+  color: #999999;
+}
+.startPayWrap .listDetail .noProduct.hasProduct {
+  display: none;
+}
+.startPayWrap .listDetail .detailTable {
+  width: 100%;
+}
+.startPayWrap .listDetail .detailTable .everyItem {
+  padding: 14px 0 10px;
+  border-bottom: 1px solid #D1D1D1;
+}
+.startPayWrap .listDetail .detailTable .everyItem .delIcon {
+  width: 24px;
+  height: 24px;
+  background-position: -10px -11px;
+  background-size: 540%;
+  margin-right: 6px;
+  cursor: pointer;
+  background-color: #e4e4e4;
+  border-radius: 6px;
+}
+.startPayWrap .listDetail .detailTable .everyItem .itemName {
+  width: calc(100% - 210px);
+}
+.startPayWrap .listDetail .detailTable .everyItem .amount {
+  width: 60px;
+  text-align: right;
+}
+.startPayWrap .listDetail .detailTable .everyItem .sectionPrice {
+  width: 110px;
+  text-align: right;
+  margin-left: 10px;
+  float: right;
+  line-height: 2.2rem;
+}
+.startPayWrap .listDetail .detailTable .everyItem .delItem, .startPayWrap .listDetail .detailTable .everyItem .itemName, .startPayWrap .listDetail .detailTable .everyItem .amount {
+  float: left;
+  line-height: 2.2rem;
+}
+.startPayWrap .listDetail .detailTable .everyItem .commodityDetail {
+  color: #929292;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  padding: 34px 0 0 30px;
+}
+.startPayWrap .listDetail .detailTable .shippingFeeWrap, .startPayWrap .listDetail .detailTable .allPriceWrap {
+  width: 100%;
+  float: right;
+  text-align: right;
+  padding: 14px 0 10px;
+}
+.startPayWrap .listDetail .detailTable .shippingFeeWrap .shipFeeTitle, .startPayWrap .listDetail .detailTable .shippingFeeWrap .shipFee, .startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFeeTitle, .startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFee, .startPayWrap .listDetail .detailTable .allPriceWrap .shipFeeTitle, .startPayWrap .listDetail .detailTable .allPriceWrap .shipFee, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFeeTitle, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFee {
+  display: inline-block;
+}
+.startPayWrap .listDetail .detailTable .shippingFeeWrap .shipFeeTitle, .startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFeeTitle, .startPayWrap .listDetail .detailTable .allPriceWrap .shipFeeTitle, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFeeTitle {
+  width: 60px;
+}
+.startPayWrap .listDetail .detailTable .shippingFeeWrap .shipFee, .startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFee, .startPayWrap .listDetail .detailTable .allPriceWrap .shipFee, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFee {
+  width: 106px;
+  margin-left: 5px;
+}
+.startPayWrap .listDetail .detailTable .shippingFeeWrap .totalFee, .startPayWrap .listDetail .detailTable .allPriceWrap .totalFee {
+  font-weight: 800;
+}
+.startPayWrap .listDetail .detailTable .shippingFeeWrap {
+  border-bottom: 1px solid #9B9B9B;
+}
+.startPayWrap .listDetail.listDetailDesktop {
+  display: block;
+}
+.startPayWrap .listDetail.listDetailMobile {
+  display: none;
+}
+.startPayWrap .listDetail.listDetailMobile .everyItem .itemName {
+  width: 100%;
+  font-weight: 800;
+  margin-bottom: 5px;
+  line-height: 1.8rem;
+  float: none;
+}
+.startPayWrap .listDetail.listDetailMobile .everyItem .commodityDetail {
+  padding: 0;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList {
+  width: 100%;
+  margin-top: 16px;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList .delItem {
+  width: 44px;
+  height: 44px;
+  float: none;
+  position: relative;
+  top: 2px;
+  background-position: -19px -19px;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList .countWrap {
+  float: right;
+  width: 80%;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount {
+  text-align: right;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amountTitle, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amount, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .sectionPrice {
+  display: inline-block;
+  margin-left: 5px;
+  line-height: 2.0rem;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amountTitle {
+  width: 60px;
+}
+.startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .amount, .startPayWrap .listDetail.listDetailMobile .cartList .countWrap .eachCount .sectionPrice {
+  float: none;
+  width: 110px;
+}
+.startPayWrap .listDetail .btn {
+  width: 100%;
+  display: block;
+  margin: 24px 0 10px;
+}
+.startPayWrap .listDetail .delivery {
+  font-size: 1.6rem;
+  margin: 0 0 5px 0;
+  line-height: 2.2rem;
+}
+.startPayWrap .listDetail .delivery .takeThenPay {
+  padding: 0 5px;
+}
+.startPayWrap .listDetail .explain {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: #a9a9a9;
+  margin: 0 0 24px;
+}
+.startPayWrap .listDetail .step {
+  color: #ffa7a7;
+  padding-left: 10px;
+  font-size: 1.6rem;
+}
+.startPayWrap label {
+  font-size: 1.3rem;
+}
+.startPayWrap .receivePackage, .startPayWrap .name, .startPayWrap .receiveSessions {
+  float: left;
+  width: 48%;
+}
+.startPayWrap .address {
+  float: left;
+  width: 100%;
+}
+.startPayWrap .payMethod, .startPayWrap .phone, .startPayWrap .note {
+  float: right;
+  width: 48%;
+}
+.startPayWrap .receiveOpt, .startPayWrap .payment, .startPayWrap .nameInput, .startPayWrap .phoneInput, .startPayWrap .addressInput, .startPayWrap .sessions, .startPayWrap .noteInput {
+  width: 100%;
+  height: 45px;
+  display: block;
+  margin: 6px 0 20px;
+}
+.startPayWrap .nameInput, .startPayWrap .phoneInput, .startPayWrap .noteInput, .startPayWrap .address {
+  width: calc(100% - 20px);
+}
+
+/*客服*/
+.CSRWrap {
+  width: 768px;
+  margin: 0 auto;
+}
+
+.CSR {
+  font-size: 1.6rem;
+  padding-left: 0;
+  margin: 0;
+  text-align: center;
+}
+.CSR li {
+  padding: 6px 14px;
+  text-align: right;
+  display: inline-block;
+  width: calc(590px / 4);
+}
+.CSR li.csPhone {
+  background-color: #EA7807;
+}
+.CSR li.csLine {
+  background-color: #02C303;
+}
+.CSR li.csFb {
+  background-color: #0084FF;
+}
+.CSR li:hover {
+  opacity: 0.9;
+}
+.CSR li a {
+  color: #FFFFFF;
+  display: block;
+  width: 100%;
+}
+.CSR li a .icon {
+  width: 36px;
+  height: 36px;
+  float: left;
+  background-size: 540%;
+}
+.CSR li a .cs {
+  line-height: 36px;
+}
+.CSR li a .callIcon {
+  background-position: -15px -97px;
+}
+.CSR li a .lineIcon {
+  background-position: -55px -94px;
+}
+.CSR li a .fbIcon {
+  background-position: -93px -94px;
+}
+
+.buyNow {
+  position: fixed;
+  right: 10px;
+  bottom: 15%;
+  background-color: #e64646;
+  color: #FFFFFF;
+  padding: 10px;
+  font-size: 1.6rem;
+  box-shadow: -2px -2px 0px #000;
+  display: none;
+}
+
+/*footer*/
+#footer {
+  width: auto;
+  background-color: #eeeeef;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+  font-size: 1.2rem;
+}
+#footer .copyright {
+  color: #7f7f7f;
+}
+
+/*lightbox*/
+.lightbox {
+  width: 100%;
+  height: 100vh;
+  font-size: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+.lightbox .lightboxContent {
+  width: 450px;
+  height: 378px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+}
+.lightbox .lightboxContent .lightboxTitleWrap {
+  height: 69px;
+  line-height: 69px;
+  border-bottom: 1px solid #EDF0F1;
+}
+.lightbox .lightboxContent .lightboxTitleWrap h2 {
+  float: left;
+  margin: 0 25px;
+  font-size: 2rem;
+}
+.lightbox .lightboxContent .lightboxTitleWrap .icon {
+  background-size: 560%;
+}
+.lightbox .lightboxContent .lightboxTitleWrap .closeBtn {
+  float: right;
+  margin: 14px 15px;
+  width: 40px;
+  height: 40px;
+  background-position: -154px -59px;
+  cursor: pointer;
+}
+.lightbox .lightboxContent .optionsWrap {
+  padding: 25px;
+  height: 160px;
+  overflow: auto;
+}
+.lightbox .lightboxContent .optionsWrap .production {
+  font-size: 1.2rem;
+  color: #585858;
+  font-weight: 400;
+}
+.lightbox .lightboxContent .optionsWrap select {
+  width: 100%;
+  height: 45px;
+}
+.lightbox .lightboxContent .optionsWrap select option {
+  font-size: 1.4rem;
+}
+.lightbox .lightboxContent .summitWrap {
+  background-color: #ECF0F1;
+  width: calc(100% - 50px);
+  height: 68px;
+  padding: 15px 25px;
+  border-radius: 0 0 8px 8px;
+}
+.lightbox .lightboxContent .summitWrap .btn {
+  width: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+  html, body {
+    font-size: 65%;
+  }
+
+  .production {
+    line-height: 1.8rem;
+  }
+
+  .cartWrap .addCart {
+    width: 900px;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap .description {
+    line-height: 1.6rem;
+  }
+  .cartWrap .addCart .prdouctList .btn {
+    margin: 16px 0 0;
+    font-size: 1.6rem;
+    padding: 16px 0;
+  }
+
+  .content {
+    width: 960px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cartWrap .addCart {
+    width: 620px;
+    padding: 60px 70px 50px;
+  }
+  .cartWrap .addCart .prdouctList {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .cartWrap .addCart .prdouctList .cartImg {
+    width: 80%;
+    display: block;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap {
+    height: 130px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .buyNow {
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cartWrap .addCart {
+    width: calc(100% - 120px);
+    padding: 70px 60px 30px;
+  }
+  .cartWrap .addCart .prdouctList {
+    margin: 0 0 40px;
+  }
+  .cartWrap .addCart .prdouctList .cartImg {
+    width: 90%;
+  }
+  .cartWrap .addCart .prdouctList .productInfoWrap .price {
+    line-height: 1.8rem;
+  }
+
+  .CSRWrap {
+    width: 100%;
+  }
+
+  .CSR li {
+    width: 120px;
+  }
+
+  .startPayWrap .shoppingList, .startPayWrap .paymentWrap, .startPayWrap .shippingInfoWrap {
+    width: 94%;
+  }
+  .startPayWrap .shoppingList .listDetail.listDetailDesktop, .startPayWrap .paymentWrap .listDetail.listDetailDesktop, .startPayWrap .shippingInfoWrap .listDetail.listDetailDesktop {
+    display: none;
+  }
+  .startPayWrap .shoppingList .listDetail.listDetailMobile, .startPayWrap .paymentWrap .listDetail.listDetailMobile, .startPayWrap .shippingInfoWrap .listDetail.listDetailMobile {
+    display: block;
+  }
+}
+@media screen and (max-width: 640px) {
+  .btn {
+    padding: 16px 0;
+    font-size: 1.6rem;
+  }
+
+  .cartWrap .addCart {
+    width: calc(100% - 40px);
+    padding: 40px 20px 10px;
+  }
+  .cartWrap .addCart .prdouctList {
+    margin: 0 0 30px;
+  }
+
+  .startPayWrap .listDetail {
+    padding: 25px;
+    width: calc(100% - 50px);
+  }
+  .startPayWrap .receivePackage, .startPayWrap .name, .startPayWrap .receiveSessions, .startPayWrap .payMethod, .startPayWrap .phone, .startPayWrap .note {
+    width: 100%;
+  }
+
+  .lightbox .lightboxContent .summitWrap {
+    height: 56px;
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  html, body {
+    font-size: 60%;
+  }
+
+  .cartWrap .addCart {
+    width: calc(100% - 20px);
+    padding: 40px 10px 10px;
+  }
+  .cartWrap .addCart .prdouctList {
+    width: calc(100% - 40px);
+    padding: 25px 20px;
+  }
+
+  .startPayWrap .shippingInfoWrap {
+    margin-bottom: 20px;
+  }
+
+  .lightbox .lightboxContent {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .lightbox .lightboxContent .optionsWrap {
+    height: calc(100vh - 206px);
+  }
+  .lightbox .lightboxContent .optionsWrap .production {
+    font-size: 1.4rem;
+  }
+  .lightbox .summitWrap {
+    border-radius: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

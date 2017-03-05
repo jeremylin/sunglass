@@ -1,0 +1,25 @@
+s3_id: AKIAJM4ONV7STBOYEFVQ
+s3_secret: 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
+s3_bucket: shop.zenda.tw
+
+site: ../
+
+index_document: index.html
+error_document: error.html
+
+max_age:
+  "*": 300
+
+gzip:
+  - .html
+  - .css
+  - .js
+
+s3_endpoint: ap-northeast-1
+
+cloudfront_wildcard_invalidation: true
+
+exclude_from_upload:
+  - .DS_Store
+  - scripts/*
+  - .git

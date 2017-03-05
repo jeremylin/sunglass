@@ -1,0 +1,847 @@
+@import "normalize";
+@import "mixin";
+
+/*global*/
+html ,body {
+	width: 100%;
+	font-size: 75%; /* 16px*75%=12px */
+	font-family: Helvetica, Arial, "Microsoft Jhenghei", "微軟正黑體", sans-serif;
+	color: #161616;
+	background-color: #EEEEEF;
+}
+
+.section {
+	width: 100%;
+}
+
+.content {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.icon {
+	display: inline-block;
+	background-image: url(../images/icon.svg);
+	background-repeat: no-repeat;
+}
+
+.redStar, .sellTag, .specialPrice, .shipFee, .must, .takeThenPay {
+	color: #D30909;
+}
+
+.btn {
+	border: none;
+	padding: 20px 0;
+	text-align: center;
+	color: #FFFFFF;
+	border-radius: 8px;
+	background-color: #dcba7d;
+	font-size: 2.0rem;
+
+	&.disable {
+		background-color: #dcdcdc;
+		cursor: not-allowed;
+
+		&:hover {
+			background-color: #dcdcdc;
+		}
+	}
+
+	&:hover {
+		background-color: #f9d674;
+		color: #925b38;
+	}
+}
+
+select, input {
+	border: 1px solid #D1D1D1;
+	border-radius: 6px;
+	background-color: transparent;
+	padding: 0 10px;
+
+	&:focus {
+		border: 1px solid #000000;
+		outline: none;
+	}
+}
+
+button:focus {
+	outline: none;
+}
+
+.production {
+	font-weight: 800;
+	line-height: 2.2rem;
+	width: 100%;
+	padding-bottom: 4px;
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+/*圖片區*/
+.imgWrap {
+	background-color: #4a4a4a;
+
+	.mainProductImg {
+		width: 100%;
+		display: block;
+		margin-bottom: -2px;
+	}
+}
+
+/*時間倒數*/
+.timeWrap {
+	background-color: #EEEEEF;
+	z-index: 2;
+
+	.countDown {
+		text-align: center;
+		padding: 30px 0;
+
+		.timeWords {
+			display: block;
+
+			.countDownTitle {
+				font-size: 1.8rem;
+				font-weight: 800;
+				margin: 10px 0 12px;
+			}
+		}
+	}
+
+	&.scroll-fix {
+		box-shadow: 0 1px 20px #bbb;
+
+		.countDown {
+			padding: 10px 0;
+			-webkit-transition: all 0.6s ease-in-out;
+			-moz-transition: all 0.6s ease-in-out;
+			-o-transition: all 0.6s ease-in-out;
+			transition: all 0.6s ease-in-out;
+
+			.timeWords {
+				display: none;
+			}
+		}
+	}
+}
+
+/*購物方案選項*/
+.cartWrap {
+	background-color: #ffffff;
+	font-size: 1.6rem;
+
+	.addCart {
+		width: 1110px;
+		padding: 60px 30px 50px;
+		background-color: #FFFFFF;
+
+		.prdouctList {
+			position: relative;
+			width: calc(33.333% - 62px);
+			margin: 0 15px;
+			float: left;
+			border: 1px solid #e8e8e8;
+			border-radius: 8px;
+			padding: 15px;
+			box-shadow: 2px 4px 15px #ececec;
+
+			.sellTag {
+				font-size: 1.8rem;
+			}
+
+			.cartImg {
+				width: 100%;
+				margin: 10px auto;
+			}
+
+			.productInfoWrap {
+				position: relative;
+				height: 160px;
+
+				.description {
+					font-size: 1.4rem;
+					line-height: 2.0rem;
+					color: #5B5B5B;
+				}
+
+				.price {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					line-height: 2.0rem;
+
+					.specialPrice {
+						font-weight: 600;
+					}
+
+					.originPrice {
+						text-decoration: line-through;
+						font-size: 1.4rem;
+						color: #777777;
+					}
+				}
+			}
+
+			.btn {
+				width: 100%;
+				margin: 25px 0 0;
+			}
+		}
+	}
+}
+
+/*開始結帳*/
+.startPayWrap {
+	background-color: #EEEEEF;
+	font-size: 1.4rem;
+	padding: 60px 0 10px;
+
+	.shoppingList, .paymentWrap, .shippingInfoWrap {
+	    width: 760px;
+	    margin-bottom: 60px;
+	}
+
+	.ListTitle {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 20px;
+
+		.titleItem {
+			float: left;
+
+			.shoppingBagIcon, .paymentIcon, .shippingIcon {
+				width: 28px;
+				height: 28px;
+				background-size: 490%;
+				vertical-align: -6px;
+				margin-right: 10px;
+			}
+
+			.shoppingBagIcon {
+				background-position: -11px -35px;
+			}
+
+			.paymentIcon {
+				background-position: -38px -35px;
+			}
+
+			.shippingIcon {
+				background-position: -65px -34px;
+			}
+		}
+
+		.switch {
+			float: right;
+			cursor: pointer;
+			display: none;
+		}
+
+		.openIcon, .closeIcon {
+			width: 28px;
+			height: 28px;
+			background-size: 490%;
+		}
+
+		.openIcon {
+			background-position: -38px -9px;
+		}
+
+		.closeIcon {
+			background-position: -64px -9px;
+		}
+	}
+
+	.listDetail {
+		background-color: #FFFFFF;
+		padding: 40px;
+		width: calc(100% - 80px);
+
+		.noProduct {
+			text-align: center;
+			color: #999999;
+
+			&.hasProduct {
+				display: none;
+			}
+		}
+
+		.detailTable {
+			width: 100%;
+
+			.everyItem {
+				padding: 14px 0 10px;
+				border-bottom: 1px solid #D1D1D1;
+
+				.delIcon {
+					width: 24px;
+					height: 24px;
+					background-position: -10px -11px;
+					background-size: 540%;
+					margin-right: 6px;
+					cursor: pointer;
+					background-color: #e4e4e4;
+					border-radius: 6px;
+				}
+
+				.itemName {
+					width: calc(100% - 210px);
+				}
+
+				.amount {
+					width: 60px;
+					text-align: right;
+				}
+
+				.sectionPrice {
+					width: 110px;
+					text-align: right;
+					margin-left: 10px;
+					float: right;
+					line-height: 2.2rem;
+				}
+
+				.delItem, .itemName, .amount {
+					float: left;
+					line-height: 2.2rem;
+				}
+
+				.commodityDetail {
+					color: #929292;
+					font-size: 1.2rem;
+					line-height: 1.7rem;
+					padding: 34px 0 0 30px;
+				}
+			}
+
+			.shippingFeeWrap, .allPriceWrap {
+				width: 100%;
+				float: right;
+				text-align: right;
+				padding: 14px 0 10px;
+
+				.shipFeeTitle, .shipFee, .totalFeeTitle, .totalFee {
+					display: inline-block;
+				}
+
+				.shipFeeTitle, .totalFeeTitle {
+					width: 60px;
+				}
+
+				.shipFee, .totalFee {
+					width: 106px;
+					margin-left: 5px;
+				}
+
+				.totalFee {
+					font-weight: 800;
+				}
+			}
+
+			.shippingFeeWrap {
+				border-bottom: 1px solid #9B9B9B;
+			}
+		}
+
+		&.listDetailDesktop {
+			display: block;
+		}
+
+		&.listDetailMobile {
+			display: none;
+
+			.everyItem {
+				.itemName {
+					width: 100%;
+					font-weight: 800;
+					margin-bottom: 5px;
+					line-height: 1.8rem;
+					float: none;
+				}
+
+				.commodityDetail {
+					padding: 0;
+				}
+			}
+
+			.cartList {
+				width: 100%;
+				margin-top: 16px;
+
+				.delItem {
+					width: 44px;
+					height: 44px;
+					float: none;
+					position: relative;
+					top: 2px;
+					background-position: -19px -19px;
+				}
+
+				.countWrap {
+					float: right;
+					width: 80%;
+
+					.eachCount {
+						text-align: right;
+
+						.amountTitle, .amount, .sectionPrice {
+							display: inline-block;
+							margin-left: 5px;
+							line-height: 2.0rem;
+						}
+
+						.amountTitle {
+							width: 60px;
+						}
+
+						.amount, .sectionPrice {
+							float: none;
+							width: 110px;
+						}
+					}
+				}
+			}
+		}
+
+		.btn {
+			width: 100%;
+			display: block;
+			margin: 24px 0 10px;
+		}
+
+		.delivery {
+			font-size: 1.6rem;
+			margin: 0 0 5px 0;
+			line-height: 2.2rem;
+
+			.takeThenPay {
+				padding: 0 5px;
+			}
+		}
+
+		.explain {
+			font-size: 1.2rem;
+			line-height: 1.5rem;
+			color: #a9a9a9;
+			margin: 0 0 24px;
+		}
+
+		.step {
+			color: #ffa7a7;
+			padding-left: 10px;
+			font-size: 1.6rem;
+		}
+	}
+
+	label {
+		font-size: 1.3rem;
+	}
+
+	.receivePackage, .name, .receiveSessions {
+		float: left;
+		width: 48%;
+	}
+
+	.address {
+		float: left;
+		width: 100%;
+	}
+
+	.payMethod, .phone, .note {
+		float: right;
+		width: 48%
+	}
+
+	.receiveOpt, .payment, .nameInput, .phoneInput, .addressInput, .sessions, .noteInput {
+		width: 100%;
+		height: 45px;
+		display: block;
+		margin: 6px 0 20px;
+	}
+
+	.nameInput, .phoneInput, .noteInput, .address {
+		width: calc(100% - 20px);
+	}
+}
+
+/*客服*/
+.CSRWrap {
+	width: 768px;
+	margin: 0 auto;
+}
+
+.CSR {
+	font-size: 1.6rem;
+	padding-left: 0;
+	margin: 0;
+	text-align: center;
+
+	li {
+		padding: 6px 14px;
+		text-align: right;
+		display: inline-block;
+		width: calc(590px / 4);
+
+		&.csPhone {
+			background-color: #EA7807;
+		}
+
+		&.csLine {
+			background-color: #02C303;
+		}
+
+		&.csFb {
+			background-color: #0084FF;
+		}
+
+		&:hover {
+			opacity: 0.9;
+		}
+
+		a {
+			color: #FFFFFF;
+			display: block;
+			width: 100%;
+
+			.icon {
+				width: 36px;
+				height: 36px;
+				float: left;
+				background-size: 540%;
+			}
+
+			.cs {
+				line-height: 36px;
+			}
+
+			.callIcon {
+				background-position: -15px -97px;
+			}
+
+			.lineIcon {
+				background-position: -55px -94px
+			}
+
+			.fbIcon {
+				background-position: -93px -94px;
+			}
+		}
+	}
+}
+
+.buyNow {
+	position: fixed;
+	right: 10px;
+	bottom: 15%;
+	background-color: #e64646;
+	color: #FFFFFF;
+	padding: 10px;
+	font-size: 1.6rem;
+	box-shadow: -2px -2px 0px #000;
+	display: none;
+}
+
+/*footer*/
+#footer {
+	width: auto;
+	background-color: #eeeeef;
+	text-align: center;
+	height: 42px;
+	line-height: 42px;
+	font-size: 1.2rem;
+
+	.copyright {
+		color: #7f7f7f;
+	}
+}
+
+/*lightbox*/
+.lightbox {
+	width: 100%;
+	height: 100vh;
+	font-size: 1.4rem;
+	background-color: rgba(0,0,0,0.7);
+	position: relative;
+
+	.lightboxContent {
+		width: 450px;
+		height: 378px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background-color: #F9FAFB;
+		border-radius: 8px;
+
+		.lightboxTitleWrap {
+			height: 69px;
+			line-height: 69px;
+			border-bottom: 1px solid #EDF0F1;
+
+			h2 {
+				float: left;
+				margin: 0 25px;
+				font-size: 2rem;
+			}
+
+			.icon {
+				background-size: 560%;
+			}
+
+			.closeBtn {
+				float: right;
+				margin: 14px 15px;
+				width: 40px;
+				height: 40px;
+				background-position: -154px -59px;
+				cursor: pointer;
+			}
+		}
+
+		.optionsWrap {
+			padding: 25px;
+			height: 160px;
+			overflow: auto;
+
+			.production {
+				font-size: 1.2rem;
+				color: #585858;
+				font-weight: 400;
+			}
+
+			select {
+				width: 100%;
+				height: 45px;
+
+				option {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.summitWrap {
+			background-color: #ECF0F1;
+			width: calc(100% - 50px);
+			height: 68px;
+			padding: 15px 25px;
+			border-radius: 0 0 8px 8px;
+
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/* sticky */
+[data-uk-sticky].uk-active {
+    background: #EEEEEF;
+}
+
+@media screen and (max-width: 1280px) {
+    // 如果使用者之視窗寬度介於 1025px ~ 1280px，將會再載入這裡的 CSS。
+    html, body {
+	font-size: 65%;
+    }
+
+	.production {
+		line-height: 1.8rem;
+	}
+
+    .cartWrap {
+	.addCart {
+		width: 900px;
+
+		.prdouctList {
+			.productInfoWrap {
+				.description {
+					line-height: 1.6rem;
+				}
+			}
+
+			.btn {
+				margin: 16px 0 0;
+				font-size: 1.6rem;
+				padding: 16px 0;
+			}
+		}
+	}
+    }
+
+	.content {
+		width: 960px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+    // 如果使用者之視窗寬度介於 768px ~ 1024px，將會再載入這裡的 CSS。
+    .cartWrap {
+	.addCart {
+		width: 620px;
+		padding: 60px 70px 50px;
+
+		.prdouctList {
+			width: calc(100% - 60px);
+			margin: 0 auto;
+			padding: 30px;
+
+			.cartImg  {
+				width: 80%;
+				display: block;
+			}
+
+			.productInfoWrap {
+				height: 130px;
+			}
+		}
+	}
+    }
+
+	.content {
+		width: 100%;
+	}
+
+	.buyNow {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 767px) {
+    // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。
+	.cartWrap {
+		.addCart {
+			width: calc(100% - 120px);
+			padding: 70px 60px 30px;
+
+			.prdouctList {
+				margin: 0 0 40px;
+
+				.cartImg {
+					width: 90%;
+				}
+
+				.productInfoWrap {
+					.price {
+						line-height: 1.8rem;
+					}
+				}
+			}
+		}
+	}
+
+	.CSRWrap {
+		width: 100%;
+	}
+
+	.CSR {
+		li {
+			width: 120px;
+		}
+	}
+
+	.startPayWrap {
+		.shoppingList, .paymentWrap, .shippingInfoWrap {
+			width: 94%;
+
+			.listDetail.listDetailDesktop {
+				display: none;
+			}
+
+			.listDetail.listDetailMobile {
+				display: block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+    // 如果使用者之視窗寬度介於 481px ~ 640px，將會再載入這裡的 CSS。
+	.btn {
+		padding: 16px 0;
+		font-size: 1.6rem;
+	}
+
+	.cartWrap {
+		.addCart {
+			width: calc(100% - 40px);
+			padding: 40px 20px 10px;
+
+			.prdouctList {
+				margin: 0 0 30px;
+			}
+		}
+	}
+
+	.startPayWrap {
+
+		.listDetail {
+			padding: 25px;
+		width: calc(100% - 50px);
+		}
+
+		.receivePackage, .name, .receiveSessions, .payMethod, .phone, .note {
+			width: 100%;
+		}
+	}
+
+	.lightbox {
+		.lightboxContent .summitWrap {
+			height: 56px;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+    // 如果使用者之視窗寬度介於 321px ~ 480px，將會再載入這裡的 CSS。
+    html, body {
+	font-size: 60%;
+    }
+
+    .cartWrap {
+	.addCart {
+		width: calc(100% - 20px);
+		padding: 40px 10px 10px;
+
+		.prdouctList {
+			width: calc(100% - 40px);
+			padding: 25px 20px;
+		}
+	}
+    }
+
+    .startPayWrap {
+	.shippingInfoWrap {
+		margin-bottom: 20px;
+	}
+    }
+
+	.lightbox {
+		.lightboxContent {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+
+			.optionsWrap {
+				height: calc(100vh - 206px);
+
+				.production {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.summitWrap {
+			border-radius: 0;
+		}
+	}
+}
