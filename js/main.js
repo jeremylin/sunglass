@@ -23,6 +23,15 @@ $(function () {
     required: "此欄位為必填",
   })
 
+  $('#zip-code').twzipcode({
+    language: 'lang/zh-tw',
+    css: [
+      'uk-form-large',
+      'uk-form-large',
+      'uk-form-large'
+    ]
+  });
+
 
   function fillModalData (e) {
     selectedItem = {}
@@ -94,7 +103,11 @@ $(function () {
     }
 
     var buyerName = $('#buyer-name').val()
-    var buyerAddress = $('#buyer-address').val()
+    var buyerAddress  = ''
+    $('#zip-code').twzipcode('get', function (county, district) {
+      buyerAddress = county + district + $('#buyer-address').val()
+    });
+
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
     var pickupTime = $('#pickup-time>option:selected').val()
@@ -112,7 +125,8 @@ $(function () {
       },
       shipping:{
         first_name: buyerName,
-        address_1: buyerAddress
+        address_1: buyerAddress,
+        address_2: $('#zip-code').twzipcode('get', 'zipcode')[0]
       },
       line_items: selectedItems,
       payment_method:'bacs',
