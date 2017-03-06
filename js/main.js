@@ -97,7 +97,7 @@ $(function () {
     var buyerAddress = $('#buyer-address').val()
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
-    var pickupTime = $('#picked-time>option:selected').val()
+    var pickupTime = $('#pickup-time>option:selected').val()
 
     var confirmButton = $('#confirm')
 

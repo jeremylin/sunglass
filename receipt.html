@@ -31,7 +31,7 @@
                 </section>
                 <section class="uk-width-1-1 uk-block uk-padding-bottom-remove">
                     <h2 class="uk-h2"><i class="uk-icon-shopping-bag"></i>我的購物清單</h2>
-                    <table class="uk-table">
+                    <table id="receipt-list" class="uk-table">
                         <thead>
                             <tr class="uk-alert-warning">
                                 <th class="uk-text-muted">產品名稱</th>
@@ -40,16 +40,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="uk-width-7-10">奢華黑 + 琥珀棕 / 台灣製 抗 UV400 太陽眼鏡</td>
-                                <td class="uk-width-1-10 uk-text-right uk-text-nowrap">X1</td>
-                                <td class="uk-width-2-10 uk-text-right uk-text-nowrap">$998</td>
+                            <tr id="receipt-template" class="uk-hidden">
+                                <td class="uk-width-7-10 item-title"></td>
+                                <td class="uk-width-1-10 uk-text-right uk-text-nowrap">
+                                    x<span class="item-quantity"></span>
+                                </td>
+                                <td class="uk-width-2-10 uk-text-right uk-text-nowrap">
+                                    <span class="item-price"></span>元
+                                </td>
                             </tr>
-                            <tr>
-                                <td class="uk-width-7-10">琥珀棕 / 台灣製 抗 UV400 太陽眼鏡</td>
-                                <td class="uk-width-1-10 uk-text-right uk-text-nowrap">X1</td>
-                                <td class="uk-width-2-10 uk-text-right uk-text-nowrap">$499</td>
-                            </tr>
+                        </tbody>
+                        <tfoot>
                             <tr>
                                 <td class="uk-width-7-10">運費</td>
                                 <td class="uk-width-1-10"></td>
@@ -57,10 +58,14 @@
                             </tr>
                             <tr class="uk-block-muted">
                                 <td class="uk-width-7-10 uk-text-bold">總計</td>
-                                <td class="uk-width-1-10 uk-text-right uk-text-bold uk-text-nowrap">X2</td>
-                                <td class="uk-width-2-10 uk-text-right uk-text-bold uk-text-nowrap">$1497</td>
+                                <td class="uk-width-1-10 uk-text-right uk-text-bold uk-text-nowrap">
+                                    x<span id="total-quantity" class="uk-margin-small-left"></span>
+                                </td>
+                                <td class="uk-width-2-10 uk-text-right uk-text-bold uk-text-nowrap">
+                                    <span id="total-amount" class="uk-margin-small-right"></span>元
+                                </td>
                             </tr>
-                        </tbody>
+                        </tfoot>
                     </table>
                 </section>
                 <section class="uk-width-1-1 uk-block uk-padding-bottom-remove">
