@@ -100,6 +100,21 @@
     }
 }
 
+#zip-code {
+	.uk-form-large {
+		width: 30%;
+
+		&:nth-child(2) {
+			margin: 0 5%;
+		}
+	}
+}
+
+input#buyer-address {
+	width: calc(100% -25px);
+	margin-left: 25px;
+}
+
 footer {
     background: #e8e8e8;
 
@@ -111,4 +126,13 @@ footer {
 
 input[name=zipcode] {
     width: 80px;
+}
+
+
+@media screen and (max-width: 767px) {
+    // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。
+	 input#buyer-address {
+		width: 100%;
+		margin-left: 0;
+	}   
 }
