@@ -32,6 +32,10 @@ $(function () {
     ]
   });
 
+  $('#next-step').click(function () {
+    $('#buyer-info').removeClass('uk-hidden')
+  })
+
 
   function fillModalData (e) {
     selectedItem = {}
