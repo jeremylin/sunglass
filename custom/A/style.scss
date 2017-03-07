@@ -1,5 +1,5 @@
 .redStar, .sellRed, .shipMethod, .specialPrice, .must {
-    color: #D30909;
+    color: #cc1111;
 }
 
 .uk-button {
@@ -35,68 +35,70 @@
     font-size: 1.2rem;
 
     .uk-grid {
-	.uk-panel-box {
-	    padding: 20px 16px;
+		.uk-panel-box {
+		    padding: 20px 16px;
 
-	    img {
-		width: 100%;
-	    }
-	}
+		    img {
+				width: 100%;
+		    }
+		}
     }
 
     .titleName {
-	height: 80px;
+		height: 70px;
 
-	.item-title {
-	    font-size: 1.4rem;
-	    line-height: 1.8rem;
-	}
+		.item-title {
+		    font-size: 1.4rem;
+		    line-height: 1.8rem;
+		}
 
-	.item-addon {
-	    font-size: 1.1rem;
-	    line-height: 1.5rem;
-	    padding: 4px 0;
-	}
+		.item-addon {
+		    font-size: 1.1rem;
+		    line-height: 1.5rem;
+		    padding: 4px 0;
+		}
     }
 
     .specialPrice {
-	font-size: 1.3rem;
-	line-height: 1.8rem;
+		font-size: 1.3rem;
+		line-height: 1.8rem;
     }
 
     .originalPrice {
-	font-size: 1.0rem;
-	line-height: 1.6rem;
-	text-decoration: line-through;
+		font-size: 1.0rem;
+		line-height: 1.6rem;
+		margin-top: 10px;
+		color: #7d7d7d;
+		text-decoration: line-through;
     }
 }
 
 #cart-list {
     #shipping-and-amount td {
-	padding: 4px 8px;
+		padding: 4px 8px;
     }
 
     .remove-from-cart.uk-button-small {
-	width: 38px;
-	position: absolute;
-	left: 0;
+		width: 38px;
+		position: absolute;
+		left: 0;
     }
 
     .item-title {
-	padding-left: 42px;
-	min-height: 38px;
+		padding-left: 42px;
+		min-height: 38px;
     }
 
     .coupon {
-	color: #00a8e6;
-	text-decoration: underline;
-	cursor: pointer;
+		color: #00a8e6;
+		text-decoration: underline;
+		cursor: pointer;
     }
 }
 
 #delivery-form {
     .uk-grid {
-	margin-top: 0;
+		margin-top: 0;
     }
 }
 
@@ -111,7 +113,7 @@
 }
 
 input#buyer-address {
-	width: calc(100% -25px);
+	width: calc(100% - 25px);
 	margin-left: 25px;
 }
 
@@ -119,13 +121,30 @@ footer {
     background: #e8e8e8;
 
     .copyright {
-	height: 40px;
-	line-height: 40px;
+		height: 40px;
+		line-height: 40px;
     }
 }
 
 input[name=zipcode] {
     width: 80px;
+}
+
+.onlineService {
+	position: fixed;
+	right: 5px;
+	bottom: 50px;
+
+	.uk-button-success, .uk-button-primary {
+		width: 60px;
+		height: 60px;
+		line-height: 20px;
+		font-size: 14px;
+		padding: 10px 0;
+		border-radius: 26px;
+		display: block;
+		margin: 5px 0;
+	}
 }
 
 
