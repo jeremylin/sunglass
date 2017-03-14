@@ -25,6 +25,7 @@ $(function () {
 
   $('#zip-code').twzipcode({
     language: 'lang/zh-tw',
+    detect: true,
     css: [
       'uk-form-large',
       'uk-form-large',
