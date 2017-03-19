@@ -11,19 +11,18 @@
         <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
         <link rel="icon" href="images/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/sticky.gradient.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/notify.gradient.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.gradient.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.css">
         <link rel="stylesheet" href="custom/A/style.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/sticky.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/notify.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js"></script>
         <script src="js/jquery.twzipcode.min.js"></script>
     </head>
     <body>
@@ -138,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div id="choose-quantity" class="uk-modal">
+            <div id="choose-coupon" class="uk-modal">
 
                 <div class="uk-modal-dialog">
                     <a class="uk-modal-close uk-close"></a>
@@ -148,6 +147,7 @@
                     </div>
                     <div id="countdown" class="uk-width-1-1 uk-text-center">
                         <div id="countdown-wording"></div>
+                        <div id="countdown-progressbar"></div>
                     </div>
                     <div class="uk-modal-footer">
                         <button id="confirm-add-to-cart" class="uk-button uk-width-1-1 uk-button-large">立即折扣</button>
@@ -156,7 +156,7 @@
             </div>
         </section>
 
-        <section class="uk-width-9-10 uk-width-xlarge-6-10 uk-container-center">
+        <section id="shopping-cart" class="uk-width-9-10 uk-width-xlarge-6-10 uk-container-center">
             <h2 class="uk-h2"><i class="uk-icon-shopping-bag"></i>我的購物清單</h2>
             <div class="uk-block">
                 <div id="no-item-in-cart" class="uk-text-center uk-alert-danger uk-block uk-margin-bottom">您目前尚未選購任何商品！</div>
@@ -185,7 +185,7 @@
                     </tbody>
                     <tfoot id="shipping-and-amount">
                         <tr>
-                            <td class="uk-table-middle coupon" data-uk-modal="{target:'#choose-quantity', center:true}">領取現金折扣券？</td>
+                            <td class="uk-table-middle coupon" data-uk-modal="{target:'#choose-coupon', center:true}">領取現金折扣券？</td>
                             <td class="uk-table-middle uk-text-right">運費</td>
                             <td class="uk-text-right uk-table-middle"><span id="shipping-fee">0</span>元</td>
                         </tr>
@@ -301,10 +301,5 @@
             <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=228016710941334&ev=PageView&noscript=1" />
         </noscript>
         <!-- End Facebook Pixel Code -->
-        <script type="text/javascript">
-            $('#clock').countdown('2020/10/10', function(event) {
-              $(this).html(event.strftime('%D days %H:%M:%S'));
-            });
-        </script>
     </body>
 </html>

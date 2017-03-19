@@ -6,14 +6,8 @@ $(function () {
   $('.add-to-cart').click(addToCart)
   $('.remove-from-cart').click(removeFromCart)
 
-  $('#countdown-wording').flipcountdown({
-    beforeDateTime: '1/01/2017 00:00:00'
-  })
-  $('#countdown-wording').on('active.uk.sticky', function () {
-    $(this).css('padding', '10px')
-  })
-  $('#countdown-wording').on('inactive.uk.sticky', function () {
-    $(this).css('padding', '0')
+  $('#countdown-wording').countdown("2018/01/01", function(e) {
+    $(this).text('剩 ' + e.strftime('%H小時 %M分 %S秒' + ' 可領取'))
   })
 
   $('#delivery-form').submit(addOrder)
@@ -37,11 +31,45 @@ $(function () {
     $('#buyer-info').removeClass('uk-hidden')
   })
 
+  $(document).scroll((e) => {
+    var $services = $('.onlineService')
+    var cartOffsetTop = $('#shopping-cart').offset().top
+    var top = $(window).scrollTop()
+
+    if (top > cartOffsetTop) {
+      $services.addClass('uk-hidden')
+    } else {
+      $services.removeClass('uk-hidden')
+    }
+  })
+
+  var bar = new ProgressBar.Line('#countdown-progressbar', {
+    strokeWidth: 4,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: {width: '100%', height: '100%'},
+    from: {color: '#ED6A5A'},
+    to: {color: '#FFEA82'},
+    step: (state, bar) => {
+      bar.path.setAttribute('stroke', state.color);
+    }
+  });
+
+  $('#choose-coupon').on({
+    'show.uk.modal': function () {
+      bar.set(1);
+      bar.animate(0.1);
+    }
+  })
+
 
   function fillModalData (e) {
     selectedItem = {}
 
-    var $modal = $('#choose-quantity')
+    var $modal = $('#choose-coupon')
     var $target = $(e.target).parent('.item')
 
     selectedItem.product_id = $target.data('item-id')
