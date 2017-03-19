@@ -25,6 +25,21 @@
     }
 }
 
+.couponWrap {
+	width: calc(100% - 20px);
+	padding: 10px;
+	background-color: #FDE0E0;
+	border-radius: 12px;
+
+	.coupon {
+		border: 3px dotted #E3C0C0;
+		border-radius: 10px;
+		font-size: 50px;
+		line-height: 130px;
+		color: #af0000;
+	}
+}
+
 .main-Img {
     display: block;
     margin: 0 auto;

@@ -1,2 +1,146 @@
-.redStar,.sellRed,.shipMethod,.specialPrice,.must{color:#cc1111}.uk-button{padding:6px 0;font-size:1.2rem;text-shadow:none}.uk-h2 [class*="uk-icon"]{margin-right:10px}.receipt section{padding:30px 20px}#countdown.uk-text-center{background-color:#EEEEEF;padding:30px 0}.main-Img{display:block;margin:0 auto}#buy-items{margin:40px auto;font-size:1.2rem}#buy-items .uk-grid .uk-panel-box{padding:20px 16px}#buy-items .uk-grid .uk-panel-box img{width:100%}#buy-items .titleName{height:70px}#buy-items .titleName .item-title{font-size:1.4rem;line-height:1.8rem}#buy-items .titleName .item-addon{font-size:1.1rem;line-height:1.5rem;padding:4px 0}#buy-items .specialPrice{font-size:1.3rem;line-height:1.8rem}#buy-items .originalPrice{font-size:1.0rem;line-height:1.6rem;margin-top:10px;color:#7d7d7d;text-decoration:line-through}#cart-list #shipping-and-amount td{padding:4px 8px}#cart-list .remove-from-cart.uk-button-small{width:38px;position:absolute;left:0}#cart-list .item-title{padding-left:42px;min-height:38px}#cart-list .coupon{color:#00a8e6;text-decoration:underline;cursor:pointer}#delivery-form .uk-grid{margin-top:0}#zip-code .uk-form-large{width:30%}#zip-code .uk-form-large:nth-child(2){margin:0 5%}input#buyer-address{width:calc(100% - 25px);margin-left:25px}footer{background:#e8e8e8}footer .copyright{height:40px;line-height:40px}input[name=zipcode]{width:80px}.onlineService{position:fixed;right:5px;bottom:50px}.onlineService .uk-button-success,.onlineService .uk-button-primary{width:60px;height:60px;line-height:20px;font-size:14px;padding:10px 0;border-radius:26px;display:block;margin:5px 0}@media screen and (max-width: 767px){input#buyer-address{width:100%;margin-left:0}}
+.redStar, .sellRed, .shipMethod, .specialPrice, .must {
+  color: #cc1111;
+}
+
+.uk-button {
+  padding: 6px 0;
+  font-size: 1.2rem;
+  text-shadow: none;
+}
+
+.uk-h2 [class*="uk-icon"] {
+  margin-right: 10px;
+}
+
+.receipt section {
+  padding: 30px 20px;
+}
+
+#countdown.uk-text-center {
+  background-color: #EEEEEF;
+  padding: 30px 0;
+}
+
+.couponWrap {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: #FDE0E0;
+  border-radius: 12px;
+}
+.couponWrap .coupon {
+  border: 3px dotted #E3C0C0;
+  border-radius: 10px;
+  font-size: 50px;
+  line-height: 130px;
+  color: #af0000;
+}
+
+.main-Img {
+  display: block;
+  margin: 0 auto;
+}
+
+#buy-items {
+  margin: 40px auto;
+  font-size: 1.2rem;
+}
+#buy-items .uk-grid .uk-panel-box {
+  padding: 20px 16px;
+}
+#buy-items .uk-grid .uk-panel-box img {
+  width: 100%;
+}
+#buy-items .titleName {
+  height: 70px;
+}
+#buy-items .titleName .item-title {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+#buy-items .titleName .item-addon {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  padding: 4px 0;
+}
+#buy-items .specialPrice {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+#buy-items .originalPrice {
+  font-size: 1.0rem;
+  line-height: 1.6rem;
+  margin-top: 10px;
+  color: #7d7d7d;
+  text-decoration: line-through;
+}
+
+#cart-list #shipping-and-amount td {
+  padding: 4px 8px;
+}
+#cart-list .remove-from-cart.uk-button-small {
+  width: 38px;
+  position: absolute;
+  left: 0;
+}
+#cart-list .item-title {
+  padding-left: 42px;
+  min-height: 38px;
+}
+#cart-list .coupon {
+  color: #00a8e6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#delivery-form .uk-grid {
+  margin-top: 0;
+}
+
+#zip-code .uk-form-large {
+  width: 30%;
+}
+#zip-code .uk-form-large:nth-child(2) {
+  margin: 0 5%;
+}
+
+input#buyer-address {
+  width: calc(100% - 25px);
+  margin-left: 25px;
+}
+
+footer {
+  background: #e8e8e8;
+}
+footer .copyright {
+  height: 40px;
+  line-height: 40px;
+}
+
+input[name=zipcode] {
+  width: 80px;
+}
+
+.onlineService {
+  position: fixed;
+  right: 5px;
+  bottom: 50px;
+}
+.onlineService .uk-button-success, .onlineService .uk-button-primary {
+  width: 60px;
+  height: 60px;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 10px 0;
+  border-radius: 26px;
+  display: block;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 767px) {
+  input#buyer-address {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

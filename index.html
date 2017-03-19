@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.css">
         <link rel="stylesheet" href="custom/A/style.css">
 
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.js"></script>
@@ -143,12 +142,15 @@
 
                 <div class="uk-modal-dialog">
                     <a class="uk-modal-close uk-close"></a>
-                    <div class="uk-modal-header uk-text-center"><h3>- 領取優惠券倒數 -</h3></div>
-                    <div id="countdown" class="uk-text-center">
+                    <div class="uk-modal-header uk-text-center"><h3>- 限時領取優惠券 -</h3></div>
+                    <div class="couponWrap">
+                        <div class="uk-text-center coupon">$100元</div>
+                    </div>
+                    <div id="countdown" class="uk-width-1-1 uk-text-center">
                         <div id="countdown-wording"></div>
                     </div>
                     <div class="uk-modal-footer">
-                        <button id="confirm-add-to-cart" class="uk-button uk-width-1-1 uk-button-large">獲得優惠卷</button>
+                        <button id="confirm-add-to-cart" class="uk-button uk-width-1-1 uk-button-large">立即折扣</button>
                     </div>
                 </div>
             </div>
@@ -265,8 +267,8 @@
         </section>
 
         <section class="onlineService">
-            <a href="" class="uk-text-center uk-button uk-width-1-1 uk-button-success">Line<br>客&nbsp;服</a>
-            <a href="" class="uk-text-center uk-button uk-width-1-1 uk-button-primary">臉&nbsp;&nbsp;書<br>客&nbsp;服</a>
+            <a href="" class="uk-text-center uk-button uk-width-1-1 uk-button-success">Line@<br>客&nbsp;服</a>
+            <a href="" class="uk-text-center uk-button uk-width-1-1 uk-button-primary">臉&nbsp;書<br>客&nbsp;服</a>
         </section>
 
         <footer class="uk-width-1-1 uk-container-center uk-text-center">
@@ -299,6 +301,10 @@
             <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=228016710941334&ev=PageView&noscript=1" />
         </noscript>
         <!-- End Facebook Pixel Code -->
-
+        <script type="text/javascript">
+            $('#clock').countdown('2020/10/10', function(event) {
+              $(this).html(event.strftime('%D days %H:%M:%S'));
+            });
+        </script>
     </body>
 </html>
