@@ -69,6 +69,7 @@ $(function () {
       $('#use-coupon').removeClass('uk-hidden')
       $('#coupon-discount').text(100)
       $('#acquire-coupon').css('visibility', 'hidden')
+      caculateAmount()
     }
   })
 
