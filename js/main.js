@@ -217,6 +217,7 @@ $(function () {
   function caculateAmount () {
     var amount = 0
     var quantity = 0
+    var discount = useCoupon ? 100 : 0
 
     selectedItems.forEach(function (item) {
       amount += item.price * item.quantity
@@ -226,7 +227,7 @@ $(function () {
     })
 
     $('#total-quantity').text(quantity)
-    $('#total-amount').text(amount)
+    $('#total-amount').text(amount - discount)
 
     if (selectedItems.length >= 1) {
       $('#no-item-in-cart').addClass('uk-hidden')
