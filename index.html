@@ -150,7 +150,7 @@
                         <div id="countdown-progressbar"></div>
                     </div>
                     <div class="uk-modal-footer">
-                        <button id="confirm-add-to-cart" class="uk-button uk-width-1-1 uk-button-large">立即折扣</button>
+                        <button id="confirm-acquire-coupon" class="uk-button uk-width-1-1 uk-button-large uk-modal-close">立即折扣</button>
                     </div>
                 </div>
             </div>
@@ -185,9 +185,14 @@
                     </tbody>
                     <tfoot id="shipping-and-amount">
                         <tr>
-                            <td class="uk-table-middle coupon" data-uk-modal="{target:'#choose-coupon', center:true}">領取現金折扣券？</td>
+                            <td id="acquire-coupon" class="uk-table-middle coupon" data-uk-modal="{target:'#choose-coupon', center:true}">領取現金折扣券？</td>
                             <td class="uk-table-middle uk-text-right">運費</td>
                             <td class="uk-text-right uk-table-middle"><span id="shipping-fee">0</span>元</td>
+                        </tr>
+                        <tr id="use-coupon" class="uk-hidden">
+                            <td class="uk-table-middle">現金折扣</td>
+                            <td class="uk-table-middle uk-text-right">x 1</td>
+                            <td class="uk-text-right uk-table-middle"><span id="coupon-discount" class="uk-margin-small-right"></span>元</td>
                         </tr>
                         <tr>
                             <td class="uk-table-middle">總計</td>

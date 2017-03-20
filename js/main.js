@@ -1,5 +1,6 @@
 $(function () {
   var apiUrl = 'http://api.zenda.tw/order'
+  var useCoupon = false
   var selectedItem = {}
   var selectedItems = []
 
@@ -25,7 +26,7 @@ $(function () {
       'uk-form-large',
       'uk-form-large'
     ]
-  });
+  })
 
   $('#next-step').click(function () {
     $('#buyer-info').removeClass('uk-hidden')
@@ -54,14 +55,20 @@ $(function () {
     from: {color: '#ED6A5A'},
     to: {color: '#FFEA82'},
     step: (state, bar) => {
-      bar.path.setAttribute('stroke', state.color);
+      bar.path.setAttribute('stroke', state.color)
     }
-  });
+  })
 
   $('#choose-coupon').on({
     'show.uk.modal': function () {
-      bar.set(1);
-      bar.animate(0.1);
+      bar.set(1)
+      bar.animate(0.1)
+    },
+    'hide.uk.modal': function () {
+      useCoupon = true
+      $('#use-coupon').removeClass('uk-hidden')
+      $('#coupon-discount').text(100)
+      $('#acquire-coupon').css('visibility', 'hidden')
     }
   })
 
@@ -139,7 +146,7 @@ $(function () {
     var buyerAddress  = ''
     $('#zip-code').twzipcode('get', function (county, district) {
       buyerAddress = county + district + $('#buyer-address').val()
-    });
+    })
 
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
@@ -165,7 +172,12 @@ $(function () {
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
-      customer_note: pickupTime + ',' + buyerNotes
+      customer_note: pickupTime + ',' + buyerNotes,
+      coupon_lines: useCoupon ? [{
+        id: selectedItems[0].product_id,
+        code: 'zenda-100-coupon',
+        discount: 100
+      }] : [],
     }).done(function (data) {
       window.location.href = '/receipt.html?o=' + data
     }).fail(function () {

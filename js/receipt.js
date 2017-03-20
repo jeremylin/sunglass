@@ -10,7 +10,7 @@ $(function () {
       $receiptSection.removeClass('uk-hidden')
 
       fillOrderInfo(data.items)
-      caculateAmount(data.items)
+      caculateAmount(data)
       fillBuyerInfo(data)
     }).fail(function () {
       $noOrderSection.removeClass('uk-hidden')
@@ -59,9 +59,11 @@ $(function () {
     $('#notes').text(data.notes || '-')
   }
 
-  function caculateAmount (items) {
+  function caculateAmount (data) {
     var amount = 0
     var quantity = 0
+    var discount = 0
+    var items = data.items
 
     items.forEach(function (item) {
       amount += item.price * item.quantity
@@ -70,7 +72,13 @@ $(function () {
       quantity += item.quantity
     })
 
+    if (data.coupon_discount) {
+      discount = data.coupon_discount
+      $('#coupon-used').removeClass('uk-hidden')
+      $('#coupon-discount').text(discount)
+    }
+
     $('#total-quantity').text(quantity)
-    $('#total-amount').text(amount)
+    $('#total-amount').text(amount - discount)
   }
 })
