@@ -14,13 +14,13 @@
 
 .receipt {
     section {
-	padding: 30px 20px;
+		padding: 30px 20px;
     }
 }
 
 #countdown {
     &.uk-text-center {
-	padding: 30px 0;
+		padding: 30px 0;
     }
 }
 
@@ -149,15 +149,20 @@ input[name=zipcode] {
 	right: 5px;
 	bottom: 50px;
 
-	.uk-button-success, .uk-button-primary {
+	.servIcon {
 		width: 60px;
 		height: 60px;
-		line-height: 20px;
-		font-size: 14px;
-		padding: 10px 0;
-		border-radius: 26px;
+		border-radius: 60px;
 		display: block;
 		margin: 5px 0;
+
+		&.line {
+			background: url(../../images/line.jpg) -1px -1px no-repeat;
+		}
+
+		&.fb {
+			background: url(../../images/fb.jpg) -1px -1px no-repeat;
+		}
 	}
 }
 
