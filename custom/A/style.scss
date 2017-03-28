@@ -166,10 +166,9 @@ input[name=zipcode] {
 	}
 }
 
-
 @media screen and (max-width: 767px) {
     // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。
-	 input#buyer-address {
+	input#buyer-address {
 		width: 100%;
 		margin-left: 0;
 	}   
