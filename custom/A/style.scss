@@ -1,28 +1,5 @@
 .redStar, .sellRed, .shipMethod, .specialPrice, .must {
-	color: #D30909;
-}
-
-.uk-button {
-	padding: 6px 0;
-	font-size: 1.2rem;
-	text-shadow: none;
-}
-
-.uk-h2 [class*="uk-icon"] {
-	margin-right: 10px;
-}
-
-.receipt {
-	section {
-		padding: 30px 20px;
-	}
-}
-
-#countdown {
-	&.uk-text-center {
-		background-color: #EEEEEF;
-		padding: 30px 0;
-    	color: #cc1111;
+    color: #cc1111;
 }
 
 .uk-button {
@@ -63,87 +40,8 @@
 }
 
 .main-Img {
-	display: block;
-	margin: 0 auto;
-}
-
-#buy-items {
-	margin: 40px auto;
-	font-size: 1.2rem;
-
-	.uk-grid {
-		.uk-panel-box {
-			padding: 20px 16px;
-
-			img {
-				width: 100%;
-			}
-		}
-	}
-
-	.titleName {
-		height: 80px;
-
-		.item-title {
-			font-size: 1.4rem;
-			line-height: 1.8rem;
-		}
-
-		.item-addon {
-			font-size: 1.1rem;
-			line-height: 1.5rem;
-			padding: 4px 0;
-		}
-	}
-
-	.specialPrice {
-		font-size: 1.3rem;
-		line-height: 1.8rem;
-	}
-
-	.originalPrice {
-		font-size: 1.0rem;
-		line-height: 1.6rem;
-		text-decoration: line-through;
-	}
-}
-
-#cart-list {
-	#shipping-and-amount td {
-		padding: 4px 8px;
-	}
-
-	.remove-from-cart.uk-button-small {
-		width: 38px;
-		position: absolute;
-		left: 0;
-	}
-
-	.item-title {
-		padding-left: 42px;
-		min-height: 38px;
-	}
-
-	.coupon {
-		color: #00a8e6;
-		text-decoration: underline;
-		cursor: pointer;
-	}
-}
-
-#delivery-form {
-	.uk-grid {
-		margin-top: 0;
-	}
-}
-
-footer {
-	background: #e8e8e8;
-
-	.copyright {
-		height: 40px;
-		line-height: 40px;
-	}
+    display: block;
+    margin: 0 auto;
 }
 
 #buy-items {
@@ -274,5 +172,5 @@ input[name=zipcode] {
 	 input#buyer-address {
 		width: 100%;
 		margin-left: 0;
-	}
+	}   
 }

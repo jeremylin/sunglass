@@ -1,29 +1,14 @@
 $(function () {
-<<<<<<< HEAD
-  var apiUrl = 'http://192.168.99.100/order'
-=======
   var apiUrl = 'http://api.zenda.tw/order'
   var useCoupon = false
->>>>>>> p002-mini-heat-seal
   var selectedItem = {}
   var selectedItems = []
 
   $('.add-to-cart').click(addToCart)
   $('.remove-from-cart').click(removeFromCart)
 
-<<<<<<< HEAD
-  $('#countdown-wording').flipcountdown({
-    beforeDateTime: '1/01/2017 00:00:00'
-  })
-  $('#countdown-wording').on('active.uk.sticky', function () {
-    $(this).css('padding', '10px')
-  })
-  $('#countdown-wording').on('inactive.uk.sticky', function () {
-    $(this).css('padding', '0')
-=======
   $('#countdown-wording').countdown("2018/01/01", function(e) {
     $(this).text('剩 ' + e.strftime('%H小時 %M分 %S秒' + ' 可領取'))
->>>>>>> p002-mini-heat-seal
   })
 
   $('#delivery-form').submit(addOrder)
@@ -33,8 +18,6 @@ $(function () {
     required: "此欄位為必填",
   })
 
-<<<<<<< HEAD
-=======
   $('#zip-code').twzipcode({
     language: 'lang/zh-tw',
     detect: true,
@@ -90,16 +73,11 @@ $(function () {
     }
   })
 
->>>>>>> p002-mini-heat-seal
 
   function fillModalData (e) {
     selectedItem = {}
 
-<<<<<<< HEAD
-    var $modal = $('#choose-quantity')
-=======
     var $modal = $('#choose-coupon')
->>>>>>> p002-mini-heat-seal
     var $target = $(e.target).parent('.item')
 
     selectedItem.product_id = $target.data('item-id')
@@ -166,11 +144,6 @@ $(function () {
     }
 
     var buyerName = $('#buyer-name').val()
-<<<<<<< HEAD
-    var buyerAddress = $('#buyer-address').val()
-    var buyerPhone = $('#buyer-phone').val()
-    var buyerNotes = $('#buyer-notes').val()
-=======
     var buyerAddress  = ''
     $('#zip-code').twzipcode('get', function (county, district) {
       buyerAddress = county + district + $('#buyer-address').val()
@@ -179,7 +152,6 @@ $(function () {
     var buyerPhone = $('#buyer-phone').val()
     var buyerNotes = $('#buyer-notes').val()
     var pickupTime = $('#pickup-time>option:selected').val()
->>>>>>> p002-mini-heat-seal
 
     var confirmButton = $('#confirm')
 
@@ -194,22 +166,13 @@ $(function () {
       },
       shipping:{
         first_name: buyerName,
-<<<<<<< HEAD
-        address_1: buyerAddress
-=======
         address_1: buyerAddress,
         address_2: $('#zip-code').twzipcode('get', 'zipcode')[0]
->>>>>>> p002-mini-heat-seal
       },
       line_items: selectedItems,
       payment_method:'bacs',
       payment_method_title:'貨到付款',
       status:'completed',
-<<<<<<< HEAD
-      customer_note: buyerNotes
-    }).done(function () {
-
-=======
       customer_note: pickupTime + ',' + buyerNotes,
       coupon_lines: useCoupon ? [{
         id: selectedItems[0].product_id,
@@ -218,7 +181,6 @@ $(function () {
       }] : [],
     }).done(function (data) {
       window.location.href = '/receipt.html?o=' + data
->>>>>>> p002-mini-heat-seal
     }).fail(function () {
 
     })
@@ -256,10 +218,7 @@ $(function () {
   function caculateAmount () {
     var amount = 0
     var quantity = 0
-<<<<<<< HEAD
-=======
     var discount = useCoupon ? 100 : 0
->>>>>>> p002-mini-heat-seal
 
     selectedItems.forEach(function (item) {
       amount += item.price * item.quantity
@@ -269,11 +228,7 @@ $(function () {
     })
 
     $('#total-quantity').text(quantity)
-<<<<<<< HEAD
-    $('#total-amount').text(amount)
-=======
     $('#total-amount').text(amount - discount)
->>>>>>> p002-mini-heat-seal
 
     if (selectedItems.length >= 1) {
       $('#no-item-in-cart').addClass('uk-hidden')
