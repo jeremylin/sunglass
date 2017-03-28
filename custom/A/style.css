@@ -1,91 +1,37 @@
-.redStar, .sellRed, .shipMethod, .specialPrice, .must {
-  color: #D30909;
-}
+/*
+Error: Invalid CSS after "}": expected "}", was ""
+        on line 278 of custom/A/style.scss
 
-.uk-button {
-  padding: 6px 0;
-  font-size: 1.2rem;
-  text-shadow: none;
-}
+273:     // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。
+274: 	 input#buyer-address {
+275: 		width: 100%;
+276: 		margin-left: 0;
+277: 	}
+278: }
 
-.uk-h2 [class*="uk-icon"] {
-  margin-right: 10px;
-}
-
-.receipt section {
-  padding: 30px 20px;
-}
-
-#countdown.uk-text-center {
-  background-color: #EEEEEF;
-  padding: 30px 0;
-}
-
-.main-Img {
-  display: block;
-  margin: 0 auto;
-}
-
-#buy-items {
-  margin: 40px auto;
-  font-size: 1.2rem;
-}
-#buy-items .uk-grid .uk-panel-box {
-  padding: 20px 16px;
-}
-#buy-items .uk-grid .uk-panel-box img {
-  width: 100%;
-}
-#buy-items .titleName {
-  height: 80px;
-}
-#buy-items .titleName .item-title {
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-}
-#buy-items .titleName .item-addon {
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  padding: 4px 0;
-}
-#buy-items .specialPrice {
-  font-size: 1.3rem;
-  line-height: 1.8rem;
-}
-#buy-items .originalPrice {
-  font-size: 1.0rem;
-  line-height: 1.6rem;
-  text-decoration: line-through;
-}
-
-#cart-list #shipping-and-amount td {
-  padding: 4px 8px;
-}
-#cart-list .remove-from-cart.uk-button-small {
-  width: 38px;
-  position: absolute;
-  left: 0;
-}
-#cart-list .item-title {
-  padding-left: 42px;
-  min-height: 38px;
-}
-#cart-list .coupon {
-  color: #00a8e6;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#delivery-form .uk-grid {
-  margin-top: 0;
-}
-
-footer {
-  background: #e8e8e8;
-}
-footer .copyright {
-  height: 40px;
-  line-height: 40px;
-}
-
-/*# sourceMappingURL=style.css.map */
+Backtrace:
+custom/A/style.scss:278
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1110:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:656:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:647:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:673:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:123:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:39:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:403:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:414:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 278 of custom/A/style.scss\A \A 273:     // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。\A 274: 	 input#buyer-address {\A 275: 		width: 100%;\A 276: 		margin-left: 0;\A 277: 	}\A 278: }"; }

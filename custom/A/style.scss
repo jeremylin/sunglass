@@ -22,6 +22,43 @@
 	&.uk-text-center {
 		background-color: #EEEEEF;
 		padding: 30px 0;
+    	color: #cc1111;
+}
+
+.uk-button {
+    padding: 6px 0;
+    font-size: 1.2rem;
+    text-shadow: none;
+}
+
+.uk-h2 [class*="uk-icon"] {
+    margin-right: 10px;
+}
+
+.receipt {
+    section {
+		padding: 30px 20px;
+    }
+}
+
+#countdown {
+    &.uk-text-center {
+		padding: 30px 0;
+    }
+}
+
+.couponWrap {
+	width: calc(100% - 20px);
+	padding: 10px;
+	background-color: #FDE0E0;
+	border-radius: 12px;
+
+	.coupon {
+		border: 3px dotted #E3C0C0;
+		border-radius: 10px;
+		font-size: 50px;
+		line-height: 130px;
+		color: #af0000;
 	}
 }
 
@@ -106,5 +143,136 @@ footer {
 	.copyright {
 		height: 40px;
 		line-height: 40px;
+	}
+}
+
+#buy-items {
+    margin: 40px auto;
+    font-size: 1.2rem;
+
+    .uk-grid {
+		.uk-panel-box {
+		    padding: 20px 16px;
+
+		    img {
+				width: 100%;
+		    }
+		}
+    }
+
+    .titleName {
+		height: 70px;
+
+		.item-title {
+		    font-size: 1.4rem;
+		    line-height: 1.8rem;
+		}
+
+		.item-addon {
+		    font-size: 1.1rem;
+		    line-height: 1.5rem;
+		    padding: 4px 0;
+		}
+    }
+
+    .specialPrice {
+		font-size: 1.3rem;
+		line-height: 1.8rem;
+    }
+
+    .originalPrice {
+		font-size: 1.0rem;
+		line-height: 1.6rem;
+		margin-top: 10px;
+		color: #7d7d7d;
+		text-decoration: line-through;
+    }
+}
+
+#cart-list {
+    #shipping-and-amount td {
+		padding: 4px 8px;
+    }
+
+    .remove-from-cart.uk-button-small {
+		width: 38px;
+		position: absolute;
+		left: 0;
+    }
+
+    .item-title {
+		padding-left: 42px;
+		min-height: 38px;
+    }
+
+    .coupon {
+		color: #00a8e6;
+		text-decoration: underline;
+		cursor: pointer;
+    }
+}
+
+#delivery-form {
+    .uk-grid {
+		margin-top: 0;
+    }
+}
+
+#zip-code {
+	.uk-form-large {
+		width: 30%;
+
+		&:nth-child(2) {
+			margin: 0 5%;
+		}
+	}
+}
+
+input#buyer-address {
+	width: calc(100% - 25px);
+	margin-left: 25px;
+}
+
+footer {
+    background: #e8e8e8;
+
+    .copyright {
+		height: 40px;
+		line-height: 40px;
+    }
+}
+
+input[name=zipcode] {
+    width: 80px;
+}
+
+.onlineService {
+	position: fixed;
+	right: 5px;
+	bottom: 50px;
+
+	.servIcon {
+		width: 60px;
+		height: 60px;
+		border-radius: 60px;
+		display: block;
+		margin: 5px 0;
+
+		&.line {
+			background: url(../../images/line.jpg) -1px -1px no-repeat;
+		}
+
+		&.fb {
+			background: url(../../images/fb.jpg) -1px -1px no-repeat;
+		}
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+    // 如果使用者之視窗寬度介於 641px ~ 767px，將會再載入這裡的 CSS。
+	 input#buyer-address {
+		width: 100%;
+		margin-left: 0;
 	}
 }
