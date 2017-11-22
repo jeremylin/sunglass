@@ -81,7 +81,7 @@
 	}
 }
 
-.btn-danger {
+#cart-form .btn-danger {
 	background-color: #fe7171 !important;
 
 	&:hover {
@@ -94,6 +94,12 @@
 	font-size: 18px !important;
 }
 
+#cart-form .btn-facebook {
+	&:hover {
+		background-color: #3e61ac !important;
+	}
+}
+
 .btn-lg {
 	padding: 18px 16px !important;
     font-size: 20px !important;
@@ -102,5 +108,25 @@
 @media (min-width: 992px) {
 	.col-md-9 {
 		width: 100% !important;
+	}
+}
+
+@media (max-width : 767px) {
+	.list-products {
+		li {
+			padding: 30px 0 !important;
+		    background-color: #eee;
+		    margin-bottom: 15px;
+		}
+
+		.pricing {
+			margin-left: 0 !important;
+			margin-top: 10px !important;			
+		}
+	}
+
+	.price-original {
+		padding-bottom: 5px;
+		display: inline-block;
 	}
 }
