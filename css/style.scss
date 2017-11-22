@@ -1,11 +1,11 @@
 .hearderTop {
-	overflow:hidden;
-	width:100%;
-	background-color:rgba(255, 255, 255, 1);
-	position:fixed; 
-	top:0; 
-	z-index:999; 
-	box-shadow:0 3px 40px #c0c0c0;
+	overflow: hidden;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 1);
+	position: fixed; 
+	top: 0; 
+	z-index: 999; 
+	box-shadow: 0 3px 40px #c0c0c0;
 
 	h2 {
 		float:left;
@@ -41,8 +41,8 @@
 }
 
 .navbar-fixed-top {
-	top: 52px;
-	z-index: 900;
+	top: 52px !important;
+	z-index: 900 !important;
 }
 
 .containerWrap {
