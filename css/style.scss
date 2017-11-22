@@ -119,9 +119,10 @@
 	.list-products {
 		li {
 			padding: 30px 0 !important;
-		    background-color: #eee;
-		    margin-bottom: 15px;
-		    box-shadow: 0px 1px 20px #a5a5a5;
+		    background-color: #f6f6f6;
+		    margin: 0px 15px 15px;
+		    -webkit-box-shadow: 0px 3px 12px #c4c4c4;
+		    box-shadow: 0px 3px 12px #c4c4c4;
 		}
 
 		.pricing {
