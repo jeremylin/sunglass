@@ -51,7 +51,7 @@
 }
 
 .list-products .pricing {
-	margin-left: 111px !important;
+	margin-left: 120px !important;
 
 	del {
 		margin: 0 10px 0 2px !important;
@@ -59,7 +59,7 @@
 }
 
 .btn {
-	padding: 12px 20px !important;
+	padding: 12px 30px !important;
 	margin-right: 10px !important;
 	-webkit-border-radius: 6px !important;
 	border-radius: 6px !important;
@@ -88,11 +88,11 @@
 	font-size: 18px !important;
 }
 
-#cart-form {
-	.btn-facebook:hover {
-		background-color: #3e61ac !important;
-	}	
+.btn.btn-facebook:hover {
+	background-color: #3e61ac !important;
+}
 
+#cart-form {
 	h2.center {
 		padding: 30px 0;
 	}
@@ -115,6 +115,7 @@
 			padding: 30px 0 !important;
 		    background-color: #eee;
 		    margin-bottom: 15px;
+		    box-shadow: 0px 1px 20px #a5a5a5;
 		}
 
 		.pricing {
